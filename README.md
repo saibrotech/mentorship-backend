@@ -12,6 +12,10 @@ Select the interpreter before:
 
 ## Run server
 
+`cd docker/dev`
+
+`docker-compose up`
+
 `python manage.py migrate`
 
 `python manage.py runserver`
