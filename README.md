@@ -25,3 +25,9 @@ Select the interpreter before:
 ## Admin
 
 http://127.0.0.1:8000/admin
+
+After create or edit a model:
+
+`python manage.py makemigrations` to create migration files
+
+`python manage.py migrate` to aply to data base
