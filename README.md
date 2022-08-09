@@ -18,4 +18,10 @@ Select the interpreter before:
 
 `python manage.py migrate`
 
+`python manage.py createsuperuser` (First time only)
+
 `python manage.py runserver`
+
+## Admin
+
+http://127.0.0.1:8000/admin
