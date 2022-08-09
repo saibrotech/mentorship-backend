@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'mentored.apps.MentoredConfig',
+    'tech.apps.TechConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
