@@ -1,3 +1,9 @@
+{% load static %}
+
 {% include './layout/header.html' %}
 
-{{text}}
+<p>
+    {{text}}
+</p>
+
+<img src="{% static 'job/logo.png' %}" alt="My image">
