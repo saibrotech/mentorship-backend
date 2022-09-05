@@ -1,3 +1,4 @@
+from tabnanny import verbose
 from django.db import models
 from unicodedata import category
 
@@ -10,6 +11,8 @@ class Category(models.Model):
     main_stacks = models.CharField(max_length=200)
     main_skills = models.CharField(max_length=200)
     pay_range = models.CharField(max_length=10)
+    class Meta:
+        verbose_name_plural = 'Categories'
 
 class Company(models.Model):
     COMPANY_SIZES = [                   # Source: SEBRAE. Anuario do Trabalho na Micro e Pequena Empresa. Sebrae: Brasília. p.17. 2013.
@@ -27,6 +30,9 @@ class Company(models.Model):
     headquarters = models.CharField(max_length=50)
     founded = models.CharField(max_length=4)
     specialties = models.TextField()
+
+    class Meta:
+        verbose_name_plural = 'Companies'
 
 class Job(models.Model):
     XP_LEVELS = [
