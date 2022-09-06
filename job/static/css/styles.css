@@ -13,6 +13,19 @@
     color:#FFFFFF;
 }
 
+.bgwhite {
+    background-color: #FFFFFF;
+}
+
+.div-img {
+    margin-top:-100px;
+    margin-right:60px;
+}
+
+.div-highlights {
+    width: 678px;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
 }
