@@ -1,0 +1,44 @@
+[
+    {
+        "model": "job.job",
+        "pk": 1,
+        "fields": {
+            "title": "Desenvolvedor Frontend Vuejs",
+            "experience_level": "ENTRY",
+            "type": "FULL",
+            "location": "Remote",
+            "requirements": "Requisitos técnicos/comportamentais obrigatórios:\r\n- Criatividade e resolução de problemas: o foco é a criação e manutenção de produtos;\r\n- Orientação natural a resolução de problemas complexos;\r\n- Ser movido para contribuir com o propósito da empresa e de inovação;\r\n- Ser proativo; curioso e capaz de aprender rápido;\r\nRequisitos Técnicos Desejáveis\r\nBuscamos um profissional dinâmico e disposto a construir uma história de sucesso com a Samplemed. O desenvolvedor terá atuação em time multidisciplinar.\r\n- Vue.js (vue3 de preferência), HTML, CSS e JS\r\n- Typescript\r\n- Interação com APIs e mecanismos de autenticação\r\n- Zelo ao implementar designs propostos .\r\nDiferenciais\r\n- Apresentar trabalhos prévios. Projetos pessoais ou profissionais que demonstrem experiência na área;\r\n- Buscamos talentos. O que será considerado nas entrevistas é a sua habilidade e proficiência na execução dos trabalhos.\r\n- Conhecimentos em docker.",
+            "link": "https://www.linkedin.com/jobs/search/?currentJobId=3252929344&f_E=2&geoId=90009594&keywords=frontend%20developer&location=Greater%20Florianopolis&refresh=true",
+            "category_id": 1,
+            "company_id": 1
+        }
+    },
+    {
+        "model": "job.job",
+        "pk": 2,
+        "fields": {
+            "title": "Business Tech Analyst II (Franqueados)",
+            "experience_level": "ENTRY",
+            "type": "FULL",
+            "location": "Remote",
+            "requirements": "Nosso espírito inquieto nos faz estar sempre de olho nas tendências futuras. A tecnologia é fundamental para revolucionar toda a nossa jornada, da pesquisa e desenvolvimento de produtos até a venda final para nossos consumidores - é através dela que estamos construindo o maior ecossistema de beleza do mundo. Cada novo processo, cada novo lançamento e cada nova solução exigem eficiência, habilidade e inovação. Só assim é possível manter a velocidade e o dinamismo do nosso crescimento e entregar beleza em cada canto do Brasil e em mais de 15 países. E é isso que o time do gb.tech está fazendo no Grupo Boticário.\r\n\r\nMain responsibilities\r\nAtuar com sustentação dos sistemas de PDV (TOTVs e LInx UX) com foco em suportar as operações de lojas físicas;\r\nConduzir e garantir a gestão de incidentes e problemas ao time da TOTVS e LINX;.\r\nNegociar, envolver e buscar a integração do trabalho junto às demais áreas da empresa, garantindo sinergia e excelência nos entregáveis;\r\nGarantir melhoria contínua e evolução dos produtos com visão de médio-longo prazo atuando em pare com os times das áreas de apoio como arquitetura e devops.",
+            "link": "https://www.linkedin.com/jobs/view/3206862092/?alternateChannel=search&refId=C4UgV%2B0ECGYhZaUxZ2a49w%3D%3D&trackingId=vKRyafxC6yguXy1de6Aj0A%3D%3D&trk=d_flagship3_search_srp_jobs&lipi=urn%3Ali%3Apage",
+            "category_id": 2,
+            "company_id": 2
+        }
+    },
+    {
+        "model": "job.job",
+        "pk": 3,
+        "fields": {
+            "title": "Desenvolvedor(a) full stack",
+            "experience_level": "ENTRY",
+            "type": "FULL",
+            "location": "Florianopolis-SC",
+            "requirements": "O Núcleo Ressacada de Pesquisas em Meio Ambiente (REMA) da Universidade Federal de Santa Catarina (UFSC) está com processo seletivo aberto para contratação (CLT) de desenvolvedor(a) full stack (40h) para atuar em projeto com a Petrobras. O início previsto das atividades será a partir de outubro/2022.\r\n\r\nMais sobre a infraestrutura do REMA: https://www.youtube.com/watch?v=vN-s3qxD_Gs\r\n\r\nProjeto alvo: Suíte integrada de simuladores matemáticos para definição de ações no gerenciamento de áreas contaminadas visando o encerramento de passivos da indústria do petróleo, gás e biocombustíveis - Projeto PETROBRAS.\r\n\r\nContratante: FEESC - Fundação de Ensino e Engenharia de Santa Catarina. Fundação de apoio à UFSC para execução de projetos de P&D&I.\r\n\r\nEtapas do processo seletivo:\r\n\r\nEtapa 0: Cadastro em https://forms.gle/wL96tcq7GeJWF5Kn9\r\nEtapa 1: Análise curricular;\r\nEtapa 2: Teste avaliativo 1 de programação;\r\nEtapa 3: Entrevista;\r\nEtapa 4: Teste avaliativo 2 de programação (para desempate, se necessário).\r\nFormação solicitada: Ciências da Computação, ou Sistemas de Informação ou Engenharias (Eletrônica, Mecânica, Elétrica, Controle e Automação e afins).",
+            "link": "https://www.linkedin.com/jobs/view/3249433568/?alternateChannel=search&refId=LqK924C6KmQuczjesXOwUA%3D%3D&trackingId=4v8Ilqc5zIev7sYjYeXRig%3D%3D&trk=d_flagship3_search_srp_jobs&lipi=urn%3Ali%3Apage%3",
+            "category_id": 1,
+            "company_id": 3
+        }
+    }
+]
