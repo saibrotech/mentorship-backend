@@ -30,4 +30,4 @@ After create or edit a model:
 
 `python manage.py makemigrations` to create migration files
 
-`python manage.py migrate` to aply to data base
+`python manage.py migrate` to apply to data base
