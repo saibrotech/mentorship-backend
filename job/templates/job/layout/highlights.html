@@ -1,8 +1,8 @@
-
-<div class="mt-5">
-    <div style="width: 678px">
-        <section style="font-size:3.5em;"class="font-weight-bold">
-            <p class="float-left">Encontre o seu primeiro <span class="blue">Emprego</span> na área de <span class="blue">TI</span></p>
+{% load static %}
+<div class="mt-5 float-left">
+    <div class="div-highlights">
+        <section class = "h1 font-weight-bold">
+            <p>Encontre o seu primeiro <span class="blue">Emprego</span> na área de <span class="blue">TI</span></p>
         </section>
         <section>
             <p class="text-black-50">Vagas de emprego pré-selecionadas para quem está começando na carreira de tecnologia
@@ -19,6 +19,11 @@
                     </button>
                 </div>
             </div>
-        </form>  
+        </form> 
     </div>
+</div>
+<div class="div-img float-right">
+    <section>
+        <img src="{% static 'job/img/junior.png'%}" alt="">
+    </section>
 </div>
