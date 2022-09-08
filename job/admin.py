@@ -5,13 +5,10 @@ from .models import Category
 from .models import Company
 from .models import Job
 
-admin.site.register(Category)
-admin.site.register(Company)
-admin.site.register(Job)
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id','main_stacks', 'main_skills', 'pay_range')
-    search_fields = ['id','main_stacks', 'main_skills']
+    list_display = ('id','name', 'main_stacks', 'main_skills', 'pay_range')
+    search_fields = ['id','name','main_stacks', 'main_skills']
 
 class CompanyAdmin(admin.ModelAdmin):
     list_display = ('id','name', 'overview', 'website', 'industry', 'size', 'headquarters', 'founded', 'specialties')
@@ -20,3 +17,7 @@ class CompanyAdmin(admin.ModelAdmin):
 class JobAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'date_posted', 'type', 'location', 'requirements', 'link', 'category_id', 'company_id')
     search_fields = ['id', 'title', 'date_posted', 'type', 'locatiion', 'requirements', 'category_id', 'company_id']
+
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(Company, CompanyAdmin)
+admin.site.register(Job, JobAdmin)
