@@ -1,10 +1,8 @@
 <h3>Áreas</h3>
 
 <ul>
-    <li><a href="#"><img src="#" alt="desenvolvimento">Desenvolvimento</a></li>
-    <li><a href="#"><img src="#" alt="suporte">Suporte</a></li>
-    <li><a href="#"><img src="#" alt="infraestrutura">Infraestrutura</a></li>
-    <li><a href="#"><img src="#" alt="ciencia de dados">Ciência de dados</a></li>
-    <li><a href="#"><img src="#" alt="seguranca">Segurança</a></li> 
-    <li><a href="#"><img src="#" alt="produto">Produto</a></li>
+    {% for area in areas %}
+        <li><a href="#"><img src="#" alt="{{area.name}}">{{area.name}}</a></li>
+    {% endfor %}
 </ul>
+
