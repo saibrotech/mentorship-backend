@@ -1,3 +1,23 @@
+{% load static %}
 <header>
-    <h1>Jobs</h1>
+    <nav class="navbar navbar-expand-sm bgwhite">
+      <div> 
+        <a href="" class="navbar-brand blue font-weight-bold">
+            <img src="{% static 'job/img/logo.png'%}" alt="logo">
+            Vagas Para Júnior</a>
+      </div>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="navbar-item">
+                <a href="" class="nav-link">
+                <button class="btn btn-link rounded">Login</button>  
+                </a>
+            </li>
+            <li class="navbar-item">
+                <a href="" class="nav-link">
+                    <button class="btn btn-primary rounded">Cadastrar</button>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>

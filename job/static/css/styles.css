@@ -1,0 +1,31 @@
+.blue {
+    color:#0086FF;
+}
+
+.blueback {
+    background:#0086FF;
+}
+.orange {
+    color: #EF4E17;
+}
+
+.white {
+    color:#FFFFFF;
+}
+
+.bgwhite {
+    background-color: #FFFFFF;
+}
+
+.div-img {
+    margin-top:-100px;
+    margin-right:60px;
+}
+
+.div-highlights {
+    width: 678px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
