@@ -1,0 +1,16 @@
+[
+    {
+        "model": "job.job",
+        "pk": 1,
+        "fields": {
+            "title": "Desenvolvedor Frontend Vuejs",
+            "experience_level": "ENTRY",
+            "type": "FULL",
+            "location": "Remote",
+            "requirements": "Requisitos técnicos/comportamentais obrigatórios:\r\n- Criatividade e resolução de problemas: o foco é a criação e manutenção de produtos;\r\n- Orientação natural a resolução de problemas complexos;\r\n- Ser movido para contribuir com o propósito da empresa e de inovação;\r\n- Ser proativo; curioso e capaz de aprender rápido;\r\nRequisitos Técnicos Desejáveis\r\nBuscamos um profissional dinâmico e disposto a construir uma história de sucesso com a Samplemed. O desenvolvedor terá atuação em time multidisciplinar.\r\n- Vue.js (vue3 de preferência), HTML, CSS e JS\r\n- Typescript\r\n- Interação com APIs e mecanismos de autenticação\r\n- Zelo ao implementar designs propostos .\r\nDiferenciais\r\n- Apresentar trabalhos prévios. Projetos pessoais ou profissionais que demonstrem experiência na área;\r\n- Buscamos talentos. O que será considerado nas entrevistas é a sua habilidade e proficiência na execução dos trabalhos.\r\n- Conhecimentos em docker.",
+            "link": "https://www.linkedin.com/jobs/search/?currentJobId=3252929344&f_E=2&geoId=90009594&keywords=frontend%20developer&location=Greater%20Florianopolis&refresh=true",
+            "category_id": 1,
+            "company_id": 1
+        }
+    }
+]
