@@ -15,8 +15,8 @@ class CompanyAdmin(admin.ModelAdmin):
     search_fields = ['id', 'name', 'industry', 'headquarters', 'founded', 'specialties']
 
 class JobAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'date_posted', 'type', 'location', 'requirements', 'link', 'category_id', 'company_id')
-    search_fields = ['id', 'title', 'date_posted', 'type', 'locatiion', 'requirements', 'category_id', 'company_id']
+    list_display = ('id', 'title', 'type', 'location', 'requirements', 'link', 'category_id', 'company_id')
+    search_fields = ['id', 'title', 'type', 'location', 'requirements']
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Company, CompanyAdmin)
