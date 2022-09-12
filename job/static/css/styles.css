@@ -2,9 +2,6 @@
     color:#0086FF;
 }
 
-.blueback {
-    background:#0086FF;
-}
 .orange {
     color: #EF4E17;
 }
@@ -13,8 +10,20 @@
     color:#FFFFFF;
 }
 
+.bgblue {
+    background:#0086FF;
+}
+
 .bgwhite {
     background-color: #FFFFFF;
+}
+
+.bgjobs {
+    background-color: #EFEFF0;
+}
+
+.color-button {
+    background-color: #FF3800;
 }
 
 .div-img {
@@ -26,6 +35,29 @@
     width: 678px;
 }
 
+.div-jobs {
+   margin-right: 50px;
+   margin-bottom: 150px;
+}
+
+.fsize-smaller {
+    font-size: 0.7em;
+}
+
+.fsize-sm {
+    font-size: 0.8em;
+    opacity: 50%;
+}
+
+.icon {
+    font-size: 1.5em; 
+    height: 64px;
+    width: 64px;
+    text-align: center
+}
+
 body {
     font-family: 'Poppins', sans-serif;
 }
+
+
