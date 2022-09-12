@@ -25,8 +25,11 @@ Select the interpreter before:
 
 ## Run fixtures
 `python manage.py loaddata category`
+
 `python manage.py loaddata company`
+
 `python manage.py loaddata job`
+
 ## Admin
 
 http://127.0.0.1:8000/admin
