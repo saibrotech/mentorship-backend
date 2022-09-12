@@ -1,0 +1,128 @@
+[
+    {
+        "model": "job.company",
+        "pk": 1,
+        "fields": {
+            "name": "Ataway",
+            "overview": "Hi! We are Ataway, a global consulting company founded in 2000, specialized in process and systems projects for large multinational companies.\r\nWe are a dynamic and agile firm, focused on delivering quality to our customers wherever they are, with our highly skilled and global teams located in 19 business hubs round the world (New York, Indianapolis, Miami, Santiago, Buenos Aires, Sao Paulo, London, Paris, Jakarta, Singapore, Chongqing, Hong Kong, Beijing, Shanghai, Seoul, Tokyo, Mexico City, Bucharest and Kuala Lumpur). Our teams have been involved in projects in 35+ countries providing:\r\n• Processes: Business Process Reengineering, Business Transformation, Shared Services, Business Intelligence, Change Management, Finance, SCM, HR, Lean Six Sigma, Project Management and others.\r\n• Systems: PeopleSoft, Fusion, E-Business Suite, Cloud, BPM/SOA, SAP and others.\r\nThe combination of our strong expertise, start-up mentality and global presence makes use unique in our industry – resulting in many quality project deliveries and our current robust growth.",
+            "website": "http://www.ataway.com",
+            "industry": "IT Services and IT Consulting",
+            "size": "L",
+            "headquarters": "Paris, FR",
+            "founded": "2000",
+            "specialties": "Strategy, Compliance, Business Process Consulting, Application Consulting, Application Development, Application Management, Testing, Process Support, Change Management, Training, Process Diagnostic Quality Improvement, Robotic Process Automation, and ERP"
+        }
+    },
+    {
+        "model": "job.company",
+        "pk": 2,
+        "fields": {
+            "name": "Grupo Boticário",
+            "overview": "Somos uma empresa brasileira com 12 mil colaboradores que constroem juntos o futuro da beleza em mais de 15 países.",
+            "website": "http://www.grupoboticario.com.br",
+            "industry": "Personal Care Product Manufacturing",
+            "size": "L",
+            "headquarters": "Curitiba, PR",
+            "founded": "2010",
+            "specialties": "Mercado da beleza, Cosméticos, Beleza, and Perfumaria"
+        }
+    },
+    {
+        "model": "job.company",
+        "pk": 3,
+        "fields": {
+            "name": "Núcleo Ressacada de Pesquisas em Meio Ambiente",
+            "overview": "Desenvolvemos soluções ambientais e tecnológicas para problemas complexos do setor produtivo industrial e agrícola.\r\n\r\nContamos com uma equipe multidisciplinar de profissionais, incluindo Eng. Ambiental, Eng. de Controle e Automação, Eng. Química, Agronomia e Biotecnologia - todos com foco no desenvolvimento de soluções.\r\n\r\nSoluções inovadoras, eficientes e com tecnologia de baixo custo!",
+            "website": "https://rema.ufsc.br/",
+            "industry": "Research Services",
+            "size": "S",
+            "headquarters": "Florianopolis-SC",
+            "founded": "2014",
+            "specialties": "Biotecnologia, Engenharia Química, Agronomia, Engenharia Ambiental, and Engenharia de Automação"
+        }
+    },
+    {
+        "model": "job.company",
+        "pk": 4,
+        "fields": {
+            "name": "Cint",
+            "overview": "Cint is a global software leader in digital insights gathering. The Cint platform automates the insights gathering process so that companies can gain access to insights faster with unparalleled scale. Cint has the world’s largest consumer network for digital market research, made up of over 155 million engaged respondents across more than 130 countries.\r\n\r\nMore than 2,900 insights-driven companies - including Kantar, Zappi, GfK and SurveyMonkey - use Cint to accelerate how they gather consumer insights and supercharge business growth.\r\n\r\nCint has a rapidly growing team across 14 global offices including London, New York, Stockholm, Los Angeles, Atlanta, Barcelona, Singapore, Tokyo, and Sydney.",
+            "website": "https://www.cint.com/",
+            "industry": "Software Development",
+            "size": "L",
+            "headquarters": "Stockholm",
+            "founded": "1998",
+            "specialties": "Software services, Insight technology, Panel monetization, insights exchange platform, Research sample, Insight APIs, AdTech, and Martech"
+        }
+    },
+    {
+        "model": "job.company",
+        "pk": 5,
+        "fields": {
+            "name": "Google",
+            "overview": "A problem isn't truly solved until it's solved for all. Googlers build products that help create opportunities for everyone, whether down the street or across the globe. Bring your insight, imagination and a healthy disregard for the impossible. Bring everything that makes you unique. Together, we can build for everyone.",
+            "website": "https://goo.gle/3m1IN7m",
+            "industry": "Technology, Information and Internet",
+            "size": "L",
+            "headquarters": "Mountain View, CA",
+            "founded": "1998",
+            "specialties": "search, ads, mobile, android, online video, apps, machine learning, virtual reality, cloud, hardware, artificial intelligence, youtube, and software"
+        }
+    },
+    {
+        "model": "job.company",
+        "pk": 6,
+        "fields": {
+            "name": "Golder",
+            "overview": "Renowned for technical excellence, Golder, a member of WSP, is a leading global specialized engineering and consulting organization with over 60 years of successful service to its clients. By joining forces with WSP in 2021, Golder is now part of a 14,000-person strong earth and environment practice, providing engineering, remediation, regulatory & compliance, design and environmental services on projects that span all seven continents. Our professionals are driven by a passion to deliver results, offering unique specialized skills to address the ever-evolving challenges that earth, environment, and energy present to clients across the infrastructure, mining, oil & gas, manufacturing and power sectors.\r\nWe are at the forefront of a larger community of experts, working to continuously drive our industry forward, and anticipate and respond to our clients’ needs.  Golder is not just a place to work, it is a promise of a living, dynamic environment where people collaborate, innovate, build enduring relationships, excel, and grow professionally in a strong culture of ownership.",
+            "website": "http://golder.com/",
+            "industry": "Environmental Services",
+            "size": "L",
+            "headquarters": "Ontario, CA",
+            "founded": "1960",
+            "specialties": "Environmental, Ground Engineering, Tunneling, Remediation, Regulatory Compliance, Design, Construction Support, Waste, Water, Digital Solutions, Field & Laboratory Testing Services, PFAS Management, Investigation & Treatment, FracMan Consulting and Software, MediaLab"
+        }
+    },
+    {
+        "model": "job.company",
+        "pk": 7,
+        "fields": {
+            "name": "GAVB Consulting",
+            "overview": "Desenvolvemos soluções que permitem às pessoas conhecer cenários com profundidade para tomar decisões com segurança. \r\n\r\nAcreditamos na integração entre tecnologia, dados e conhecimento como uma maneira de visualizar os melhores caminhos para o futuro da sua empresa.\r\n\r\nApoiamos organizações a inovarem com práticas data-driven business, oferecendo serviços de consultoria e desenvolvimento para projetos de transformação tecnológica, inovação dos negócios e jornada para a nuvem. Somos especialistas em Big Data & AI, DevOps, Cloud, RPA, Blockchain. Nossas soluções são focadas em simplificar desafios e potencializar resultados. Por isso, desde 2021 fazemos parte do Grupo Boticário, um dos maiores varejistas do Brasil.\r\n\r\nGlobal Strategic Partnerships: Google, AWS, Microsoft, Oracle, Red Hat e UiPath.",
+            "website": "https://www.gavb.com.br/",
+            "industry": "IT Services and IT Consulting",
+            "size": "L",
+            "headquarters": "Canoas, RS",
+            "founded": "2014",
+            "specialties": "Big Data, Cloud, DevOps, RPA, Machine Learning, AI, Data Analytics, Blockchain, Middleware, Google Cloud Platform, AWS, Microsoft Azure, Oracle Cloud, and UiPath"
+        }
+    },
+    {
+        "model": "job.company",
+        "pk": 8,
+        "fields": {
+            "name": "RD Station",
+            "overview": "A RD Station é líder no desenvolvimento de software (SaaS) voltado para o crescimento de médias e pequenas empresas. Sua plataforma de automação de marketing e vendas é líder no Brasil e soma 35.000 clientes em mais de 40 países. Possui uma divisão de conteúdo, mídia e educação para clientes e parceiros, em que estão os sites Resultados Digitais e Agência de Resultados, e 750 funcionários em toda a América Latina.",
+            "website": "https://www.rdstation.com/",
+            "industry": "Software Development",
+            "size": "L",
+            "headquarters": "Florianopolis-SC",
+            "founded": "2011",
+            "specialties": "Marketing Digital, CRM"
+        }
+    },
+    {
+        "model": "job.company",
+        "pk": 9,
+        "fields": {
+            "name": "Wiley",
+            "overview": "We are here to help people develop, learn, and advance their knowledge.  \r\n\r\nFrom books and scholarly journals, to digital learning platforms and tools, our job is to empower our customers to be successful in whatever it is they want to achieve.  \r\n\r\nOur global headquarters are located in Hoboken, New Jersey, with operations in the U.S., Europe, Asia, Canada, and Australia. Visit us at http://www.wiley.com. We are listed on the New York Stock Exchange under the symbols WLY and WLYB.",
+            "website": "http://www.wiley.com/",
+            "industry": "Book and Periodical Publishing",
+            "size": "L",
+            "headquarters": "Hoboken, NJ",
+            "founded": "1807",
+            "specialties": "Research, Education, Publishing, Assessment, Certification, Learning, Higher Education, Development, Digital Education, Professional Development, Science, Technology, Digital Content, Talent Solutions, and Education Services"
+        }
+    }
+]
