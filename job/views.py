@@ -1,26 +1,9 @@
+from job.models import Category
 from django.shortcuts import render
 
 def index(request):
-    areas = [
-        {
-            'name': 'Desenvolvimento'
-        },
-        {
-            'name': 'Suporte'
-        },
-        {
-            'name': 'Infraestrutura'
-        },
-        {
-            'name': 'Ciência de Dados'
-        }, 
-        {
-            'name': 'Segurança'
-        }, 
-        {
-            'name': 'Produto'
-        }
-    ]
+    areas = Category.objects.all()
+
     context = {
         'areas': areas
     }
