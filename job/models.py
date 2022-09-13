@@ -9,6 +9,7 @@ from unicodedata import category
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
+    code = models.CharField(max_length=3)
     main_stacks = models.CharField(max_length=200)
     main_skills = models.CharField(max_length=200)
     pay_range = models.CharField(max_length=10)

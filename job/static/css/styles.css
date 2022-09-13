@@ -32,7 +32,10 @@
 }
 
 .div-highlights {
-    width: 678px;
+    background-image: url('/static/job/img/junior.png');
+    background-position: right top -100px;
+    background-repeat: no-repeat;
+    height: 600px;
 }
 
 .div-jobs {
@@ -60,4 +63,19 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+<<<<<<< HEAD
 
+=======
+.icon-rounded {
+    display: inline-block;
+    width: 72px;
+    height: 72px;
+    
+    padding: 16px;
+
+    background-color: #0086FF;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 30px;
+}
+>>>>>>> main
