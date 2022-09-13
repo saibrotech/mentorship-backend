@@ -1,0 +1,62 @@
+[
+    {
+        "model": "job.category",
+        "pk": 1,
+        "fields": {
+            "name": "Desenvolvimento",
+            "main_stacks": "HTML, CSS, JavaScript, GIt, PHP, Python, Ruby, Java",
+            "main_skills": "trabalho colaborativo, criatividade, comunicação, noções de design, armazenamento de banco de dados, arquitetura web.",
+            "pay_range": "3400-4200"
+        }
+    },
+    {
+        "model": "job.category",
+        "pk": 2,
+        "fields": {
+            "name": "Suporte",
+            "main_stacks": "Python, Java, PHP, SQL, Git, HTML, CSS, JavaScript",
+            "main_skills": "Comunicação, Solução de problemas, Gestão de controle de acessos,",
+            "pay_range": "1600-3200"
+        }
+    },
+    {
+        "model": "job.category",
+        "pk": 3,
+        "fields": {
+            "name": "Infraestrutura",
+            "main_stacks": "Docker, Git, SQL, PHP, Apache, Linux",
+            "main_skills": "Projeto de redes, Manutenção e monitoramento de plataformas, Segurança de dados, Suporte técnico, Produtividade, Computação em nuvem",
+            "pay_range": "2600-5700"
+        }
+    },
+    {
+        "model": "job.category",
+        "pk": 4,
+        "fields": {
+            "name": "Ciência de Dados",
+            "main_stacks": "Python, SQL, R, MongoDB, Spark, TensorFlow, Django",
+            "main_skills": "Análise estatística, Processamento de bancos de dados, Visualização de dados, Concatenação de dados, Programação",
+            "pay_range": "3000-4000"
+        }
+    },
+    {
+        "model": "job.category",
+        "pk": 5,
+        "fields": {
+            "name": "Segurança",
+            "main_stacks": "Windows Server, Microsoft Defender, Shell, PowerShell",
+            "main_skills": "Controle de acessos, Suporte, Teste de vunerabilidade, Gestão e otimização de processos",
+            "pay_range": "3500-4300"
+        }
+    },
+    {
+        "model": "job.category",
+        "pk": 6,
+        "fields": {
+            "name": "Produto",
+            "main_stacks": "HTML, CSS, JavaScript, Kotlin, Ruby, Python, PostgreSQL, React, Angular, Vue",
+            "main_skills": "Prototipagem, Trabalho colaborativo, Pesquisa de mercado, Planejamento estratégico",
+            "pay_range": "3000-3600"
+        }
+    }
+]
