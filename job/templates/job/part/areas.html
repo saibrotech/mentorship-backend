@@ -1,0 +1,20 @@
+<h3 class="text-center">Áreas</h3>
+
+<div class="container">
+    <div class="row">
+        {% for area in areas %}
+        <div class="col">
+            <a href="#">
+                <div class="text-center">
+                    <div class="icon-rounded">
+                        <span class="fa fa-code"></span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    {{area.name}}
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
