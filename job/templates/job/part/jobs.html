@@ -1,84 +1,20 @@
 {% load static %}
 <div class="clearfix"></div>
-<div class="div-jobs">
+<div class="div-jobs mt-5">
     <h5 class="font-weight-bold text-sm-center p-4">Vagas mais recentes</h5>
     <ul class="list-group bgjobs">
+        {% for job in jobs %}
         <li class="list-group-item">
             <i class="bi bi-code-slash float-left icon border-primary bg-primary text-white rounded-circle p-3 m-4"></i>
             <div class="float-left">
                 <p class="fsize-sm">Google</p>
-                <h6 class="font-weight-bold">Programador Front-end</h6>
+                <h6 class="font-weight-bold"> {{job.title}}</h6>
                 <p class="fsize-smaller"><i class="bi bi-geo-alt text-primary pr-2"></i>Florianópolis, SC</p>
             </div>
             <button class="btn color-button float-right mt-4">
                 <a class="btn text-white" href="">Detalhes</a>
             </button>
         </li>
-        <li class="list-group-item">
-            <i class="bi bi-code-slash float-left icon border-primary bg-primary text-white rounded-circle p-3 m-4"></i>
-            <div class="float-left">
-                <p class="fsize-sm">Google</p>
-                <h6 class="font-weight-bold">Programador Back-end</h6>
-                <p class="fsize-smaller"><i class="bi bi-geo-alt text-primary pr-2"></i>Remoto</p>
-            </div>
-            <button class="btn color-button float-right mt-4">
-                <a class="btn text-white" href="">Detalhes</a>
-            </button>
-        </li>
-        <li class="list-group-item">
-            <i class="bi bi-code-slash float-left icon border-primary bg-primary text-white rounded-circle p-3 m-4"></i>
-            <div class="float-left">
-                <p class="fsize-sm">Google</p>
-                <h6 class="font-weight-bold">Analista de Suporte</h6>
-                <p class="fsize-smaller"><i class="bi bi-geo-alt text-primary pr-2"></i>Florianópolis, SC</p>
-            </div>
-            <button class="btn color-button float-right mt-4">
-                <a class="btn text-white" href="">Detalhes</a>
-            </button>
-        </li>    
-        <li class="list-group-item">
-            <i class="bi bi-code-slash float-left icon border-primary bg-primary text-white rounded-circle p-3 m-4"></i>
-            <div class="float-left">
-                <p class="fsize-sm">Google</p>
-                <h6 class="font-weight-bold">UX Designer</h6>
-                <p class="fsize-smaller"><i class="bi bi-geo-alt text-primary pr-2"></i>Florianópolis, SC</p>
-            </div>
-            <button class="btn color-button float-right mt-4">
-                <a class="btn text-white" href="">Detalhes</a>
-            </button>
-        </li>
-        <li class="list-group-item">
-            <i class="bi bi-code-slash float-left icon border-primary bg-primary text-white rounded-circle p-3 m-4"></i>
-            <div class="float-left">
-                <p class="fsize-sm">Google</p>
-                <h6 class="font-weight-bold">Programador Java</h6>
-                <p class="fsize-smaller"><i class="bi bi-geo-alt text-primary pr-2"></i>Florianópolis, SC</p>
-            </div>
-            <button class="btn color-button float-right mt-4">
-                <a class="btn text-white" href="">Detalhes</a>
-            </button>
-        </li>
-        <li class="list-group-item">
-            <i class="bi bi-code-slash float-left icon border-primary bg-primary text-white rounded-circle p-3 m-4"></i>
-            <div class="float-left">
-                <p class="fsize-sm">Google</p>
-                <h6 class="font-weight-bold">Programador JavaScript</h6>
-                <p class="fsize-smaller"><i class="bi bi-geo-alt text-primary pr-2"></i>Florianópolis, SC</p>
-            </div>
-            <button class="btn color-button float-right mt-4">
-                <a class="btn text-white" href="">Detalhes</a>
-            </button>  
-        </li>
-        <li class="list-group-item">
-            <i class="bi bi-code-slash float-left icon border-primary bg-primary text-white rounded-circle p-3 m-4"></i>
-            <div class="float-left">
-                <p class="fsize-sm">Google</p>
-                <h6 class="font-weight-bold">Programador Phyton</h6>
-                <p class="fsize-smaller"><i class="bi bi-geo-alt text-primary pr-2"></i>Florianópolis, SC</p>
-            </div>
-            <button class="btn color-button float-right mt-4">
-                <a class="btn text-white" href="">Detalhes</a>
-            </button>  
-        </li>
+        {% endfor %}
     </ul>
 </div>

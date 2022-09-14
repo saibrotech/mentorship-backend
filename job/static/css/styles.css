@@ -52,6 +52,10 @@
     opacity: 50%;
 }
 
+.div-search {
+    width: 700px;
+}
+
 .icon {
     font-size: 1.5em; 
     height: 64px;
@@ -63,9 +67,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-<<<<<<< HEAD
-
-=======
 .icon-rounded {
     display: inline-block;
     width: 72px;
@@ -78,4 +79,3 @@ body {
     color: #FFFFFF;
     font-size: 30px;
 }
->>>>>>> main
