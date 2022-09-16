@@ -2,9 +2,6 @@
     color:#0086FF;
 }
 
-.blueback {
-    background:#0086FF;
-}
 .orange {
     color: #EF4E17;
 }
@@ -13,8 +10,20 @@
     color:#FFFFFF;
 }
 
+.bgblue {
+    background:#0086FF;
+}
+
 .bgwhite {
     background-color: #FFFFFF;
+}
+
+.bgjobs {
+    background-color: #EFEFF0;
+}
+
+.color-button {
+    background-color: #FF3800;
 }
 
 .div-img {
@@ -29,19 +38,31 @@
     height: 600px;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
+.div-jobs {
+   margin-right: 50px;
+   margin-bottom: 150px;
 }
 
-.icon-rounded {
-    display: inline-block;
-    width: 72px;
-    height: 72px;
-    
-    padding: 16px;
+.fsize-smaller {
+    font-size: 0.7em;
+}
 
-    background-color: #0086FF;
-    border-radius: 50%;
-    color: #FFFFFF;
-    font-size: 30px;
+.fsize-sm {
+    font-size: 0.8em;
+    opacity: 50%;
+}
+
+.div-search {
+    width: 700px;
+}
+
+.icon {
+    font-size: 1.5em; 
+    height: 64px;
+    width: 64px;
+    text-align: center
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
 }
