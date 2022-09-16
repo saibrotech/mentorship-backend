@@ -63,5 +63,5 @@ class Job(models.Model):
     location = models.CharField(max_length=50)
     requirements = models.TextField()
     link = models.CharField(max_length=200)
-    category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
-    company_id = models.ForeignKey(Company, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)

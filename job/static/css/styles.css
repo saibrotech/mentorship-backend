@@ -66,16 +66,3 @@
 body {
     font-family: 'Poppins', sans-serif;
 }
-
-.icon-rounded {
-    display: inline-block;
-    width: 72px;
-    height: 72px;
-    
-    padding: 16px;
-
-    background-color: #0086FF;
-    border-radius: 50%;
-    color: #FFFFFF;
-    font-size: 30px;
-}
