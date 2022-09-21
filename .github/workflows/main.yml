@@ -26,6 +26,6 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build the docker image
-        working-directory: mentorship-backend
+        working-directory: .
         run: docker build . --file Dockerfile backend:$(date +%s)
   
