@@ -2,6 +2,10 @@
 
 ## Dev
 
+### Docker
+
+`docker compose up`
+
 ### Create environment
 
 `python3 -m venv venv`
