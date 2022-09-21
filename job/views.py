@@ -1,17 +1,19 @@
 from job.models import Category, Job
 from django.shortcuts import render
-from django_filters.rest_framework import DjangoFilterBackend
+
 
 def index(request):
+
+    if 'search' in request.GET:
+        search = request.GET['search']
+        jobs = Job.objects.filter(title__icontains=search)
+    else:
+        jobs = Job.objects.all()
+
     areas = Category.objects.all()
-    jobs = Job.objects.all()
-    filter= [DjangoFilterBackend]
-    filterset_fields = ['job']
 
     context = {
         'areas': areas,
-        'jobs': jobs,
-        'filter':filter,
-        'filterset_fields':filterset_fields,
+        'jobs': jobs
     }
     return render(request, 'job/index.html', context)
