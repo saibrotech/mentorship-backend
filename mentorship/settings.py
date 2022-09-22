@@ -34,12 +34,14 @@ INSTALLED_APPS = [
     'mentored.apps.MentoredConfig',
     'tech.apps.TechConfig',
     'job.apps.JobConfig',
+    'api.apps.ApiConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'django_filters',
 ]
 
