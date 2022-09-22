@@ -4,16 +4,12 @@ from django.shortcuts import render
 
 
 def index(request):
+    areas = Category.objects.all()
 
     if 'search' in request.GET:
         search = request.GET['search']
         jobs = Job.objects.filter(title__icontains=search)
-    else:
-        jobs = Job.objects.all()
-
-    areas = Category.objects.all()
-
-    if 'area' in request.GET:
+    elif 'area' in request.GET:
         area = request.GET['area']
         jobs = Job.objects.filter(category__code=area)
     else:
