@@ -1,10 +1,14 @@
 # mentorship-backend
 
-## Dev
-
 ### Docker
 
 `docker compose up`
+
+- docker/dev <br>
+    - Para rodar o docker apenas da base da dados PostgreSQL.
+
+- /dev <br>
+    - Para rodar o docker de Django e a base de dados juntos.
 
 ### Create environment
 

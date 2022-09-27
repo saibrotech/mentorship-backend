@@ -11,7 +11,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     expose:
-      - 5433:5432
+      - 5432:5432
     networks:
       - appnetwork
   web:
