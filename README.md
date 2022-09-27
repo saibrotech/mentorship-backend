@@ -1,14 +1,16 @@
 # mentorship-backend
 
+## DEV
+
 ### Docker
+
+No terminal:
+
+`cd docker/dev`
 
 `docker compose up`
 
-- docker/dev <br>
-    - Para rodar o docker apenas da base da dados PostgreSQL.
-
-- /dev <br>
-    - Para rodar o docker de Django e a base de dados juntos.
+Isso irá rodar o docker apenas da base da dados PostgreSQL
 
 ### Create environment
 
@@ -31,14 +33,14 @@ Select the interpreter before:
 `python manage.py runserver`
 
 
-## Run fixtures
+### Run fixtures
 `python manage.py loaddata category`
 
 `python manage.py loaddata company`
 
 `python manage.py loaddata job`
 
-## Admin
+### Admin
 
 http://127.0.0.1:8000/admin
 
@@ -52,3 +54,9 @@ After create or edit a model:
 ### Figma Prototype
 
 https://www.figma.com/file/Qg08r5xH2nlWXmAao32k0I/Vagas-para-J%C3%BAnior?node-id=105%3A466
+
+## Produção
+
+Na pastar `docker` existe um docker compose para rodar o docker de Django e a base de dados juntos.
+
+`docker-compose up`
