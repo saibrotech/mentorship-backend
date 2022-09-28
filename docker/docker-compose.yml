@@ -6,12 +6,12 @@ volumes:
 services:
   db:
     image: postgres
+    volumes:
+      - mentorship-data:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-    expose:
-      - 5432:5432
     networks:
       - appnetwork
   web:
@@ -19,10 +19,8 @@ services:
     environment:
       - DB_HOST=db
     command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
-    volumes:
-      - mentorship-data:/var/lib/postgresql/data
     ports:
-      - 8000:8000
+      - 8000
     depends_on:
       - db
     networks:
