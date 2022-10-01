@@ -1,5 +1,5 @@
 .blue {
-    color:#0086FF;
+    color: #0086FF;
 }
 
 .orange {
@@ -7,11 +7,11 @@
 }
 
 .white {
-    color:#FFFFFF;
+    color: #FFFFFF;
 }
 
 .bgblue {
-    background:#0086FF;
+    background: #0086FF;
 }
 
 .bgwhite {
@@ -27,20 +27,13 @@
 }
 
 .div-img {
-    margin-top:-100px;
-    margin-right:60px;
-}
-
-.div-highlights {
-    background-image: url('/static/job/img/junior.png');
-    background-position: right top -100px;
-    background-repeat: no-repeat;
-    height: 600px;
+    margin-top: -100px;
+    margin-right: 60px;
 }
 
 .div-jobs {
-   margin-right: 50px;
-   margin-bottom: 150px;
+    margin-right: 50px;
+    margin-bottom: 150px;
 }
 
 .fsize-smaller {
@@ -52,17 +45,91 @@
     opacity: 50%;
 }
 
-.div-search {
-    width: 700px;
-}
-
 .icon {
-    font-size: 1.5em; 
+    font-size: 1.5em;
     height: 64px;
     width: 64px;
-    text-align: center
+    text-align: center;
+}
+
+.iconsize {
+    font-size: 1.5em;
+}
+
+.img-highlights {
+    object-fit: cover;
+    margin-top: 0px;
+    width: 100%;
+    object-position: -100px -80px;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
+}
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+    .img-highlights {
+        object-position: -30px 0px;
+        object-fit: cover;
+        min-height: 300px;
+    }
+
+    .text-size {
+        font-size: 30px;
+    }
+
+    .form1 {
+        display: none;
+    }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .img-highlights {
+        max-height: 320px;
+        object-position: -10px -30px;
+    }
+
+    .text-size {
+        font-size: 30px;
+    }
+
+    .form1 {
+        display: none;
+    }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .img-highlights {
+        max-height: 450px;
+        object-position: -10px -50px;
+    }
+
+    .form2 {
+        display: none;
+    }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .img-highlights {
+        max-height: 500px;
+    }
+
+    .form2 {
+        display: none;
+    }
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+    .img-highlights {
+        max-height: 700px;
+    }
+
+    .form2 {
+        display: none;
+    }
 }

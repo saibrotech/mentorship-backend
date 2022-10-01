@@ -1,21 +1,46 @@
 {% load static %}
-
-<div class="div-highlights">
-    <section class = "h1 font-weight-bold">
-        <p>Encontre o seu primeiro <span class="blue">Emprego</span> na área de <span class="blue">TI</span></p>
-    </section>
-    <section>
-        <p class="text-black-50">Vagas de emprego pré-selecionadas para quem está começando na carreira de tecnologia
-            da informação.
-            <a class="orange" href="">Saiba mais...</a>
-        </p>
-    </section>
-    <form class="clearfix mt-5">
-        <div class="input-group div-search">
-            <input class="form-control form-control-lg  border-dark fsize-sm" type="text" name="search" placeholder="Busque por um título de vaga...">
-            <div class="input-group-append">
-                <input type="submit" value="Buscar" class="btn color-button text-white font-weight-bold">
+<div>
+    <div class="container-fluid">
+        <div class="row d-flex">
+            <div class="col">
+                <section class="h1 text-size font-weight-bold mt-4">
+                    <p>Encontre o seu primeiro <span class="blue">Emprego</span> na área de <span class="blue">TI</span>
+                    </p>
+                </section>
+                <section>
+                    <p class="text-black-50">Vagas de emprego pré-selecionadas para quem está começando na carreira de
+                        tecnologia da informação.
+                        <a class="orange" href="">Saiba mais...</a>
+                    </p>
+                </section>
+                <form class="clearfix mt-5 form1">
+                    <div class="input-group">
+                        <input class="form-control border-dark fsize-sm" type="text" name="search"
+                            placeholder="Busque por um título de vaga...">
+                        <div class="input-group-append">
+                            <input type="submit" value="Buscar" class="btn color-button text-white font-weight-bold">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+                <div>
+                    <img class="img-fluid img-highlights" src="/static/job/img/junior.png" alt="">
+                </div>
             </div>
         </div>
-    </form> 
+        <div class="row mt-1">
+            <div class="col">
+                <form class="clearfix form2">
+                    <div class="input-group">
+                        <input class="form-control form-group border-dark fsize-sm mb-2" type="text" name="search"
+                            placeholder="Busque por um título de vaga...">
+                        <div class="input-group">
+                            <input type="submit" value="Buscar" class="form-control form-group btn btn-block color-button text-white font-weight-bold">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
