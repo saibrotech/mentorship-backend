@@ -6,8 +6,8 @@ register = template.Library()
 
 #Function that takes a text and turns it into the same text but in another color.
 @register.filter
-def ExampleCustom_filter(text):
-    safe_text = '<span style="color:{color}">{text}</span>'.format(color="gray", text=text)
+def ExampleCustom_filter(text, color):
+    safe_text = '<span style="color:{color}">{text}</span>'.format(color=color, text=text)
     return mark_safe(safe_text)
 
 

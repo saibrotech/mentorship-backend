@@ -10,7 +10,11 @@
                     {{area.code | area_icon:chosen_area}}
                 </div>
                 <div class="d-flex justify-content-center p-2">
-                    {{area.name | ExampleCustom_filter}}
+                    {%if chosen_area == area.code%}
+                    {{area.name | ExampleCustom_filter:"dogerblue"}}
+                    {%else%}
+                    {{area.name | ExampleCustom_filter:"gray"}}
+                    {%endif%}
                 </div>
             </a> 
         </div>
