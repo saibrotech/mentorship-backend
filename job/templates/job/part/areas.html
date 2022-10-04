@@ -1,10 +1,13 @@
-<h3 class="text-center mt-5">Áreas</h3>
+<div class= "bg-area mt-4 pt-1 pb-3">
+    <h3 class="text-center font-weight-bold mt-5">
+        Áreas da TI
+    </h3>
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             {% for area in areas %}
-            <div class="col">
+            <div class="col display-area">
                 <a href="?area={{area.code}}">
-                    <div class="d-flex justify-content-center p-2">
+                    <div class="d-flex justify-content-center mt-4">
                         <i class="bi bi-code-slash icon bg-primary text-white rounded-circle p-3"></i>
                     </div>
                     <div class="d-flex justify-content-center p-2">
@@ -15,8 +18,4 @@
             {% endfor %}
         </div>
     </div>
-
-
-
-    
-
+</div>
