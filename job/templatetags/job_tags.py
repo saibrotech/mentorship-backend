@@ -4,31 +4,60 @@ from django.utils.safestring import mark_safe
 
 register = template.Library()
 
+#Function that takes a text and turns it into the same text but in another color.
 @register.filter
 def ExampleCustom_filter(text):
-    if text == 'Desenvolvimento':
-        safe_text = '<span style="color:{color}">{text}</span>'.format(color='red', text=text)
+    safe_text = '<span style="color:{color}">{text}</span>'.format(color="gray", text=text)
+    return mark_safe(safe_text)
+
+
+#Function that returns a icon depending on the area_code.
+@register.filter(is_safe=True)
+def area_icon(area_code, chosen_area):
+    if area_code == 'DEV' and chosen_area == 'DEV':
+        safe_text = '<i class="bi bi-code-slash icon bg-primary text-white rounded-circle p-3"></i>'
+        return  mark_safe(safe_text)  
+    elif area_code == 'DEV':
+        safe_text = '<i class="bi bi-code-slash icon bg-secondary text-white rounded-circle p-3"></i>'
+        return  mark_safe(safe_text) 
+
+    elif area_code == 'SUP' and chosen_area == 'SUP':
+        safe_text = '<i class="bi bi-headset icon bg-primary text-white rounded-circle p-3"></i>'
         return mark_safe(safe_text)
-    if text == 'Suporte':
-        safe_text = '<span style="color:{color}">{text}</span>'.format(color='orange', text=text)
+    elif area_code == 'SUP':
+        safe_text = '<i class="bi bi-headset icon bg-secondary text-white rounded-circle p-3"></i>'
         return mark_safe(safe_text)
-    if text == 'Infraestrutura':
-        safe_text = '<span style="color:{color}">{text}</span>'.format(color='blue', text=text)
+
+    elif area_code == 'INF' and chosen_area == 'INF':
+        safe_text = '<i class="bi bi-server icon bg-primary text-white rounded-circle p-3"></i>'
         return mark_safe(safe_text)
-    if text == 'Ciência de Dados':
-        safe_text = '<span style="color:{color}">{text}</span>'.format(color='purple', text=text)
+    elif area_code == 'INF':
+        safe_text = '<i class="bi bi-server icon bg-secondary text-white rounded-circle p-3"></i>'
         return mark_safe(safe_text)
-    if text == 'Segurança':
-        safe_text = '<span style="color:{color}">{text}</span>'.format(color='green', text=text)
+
+    elif area_code == 'CIE' and chosen_area == 'CIE':
+        safe_text = '<i class="bi bi-pie-chart icon bg-primary text-white rounded-circle p-3"></i>'
         return mark_safe(safe_text)
-    if text == 'Produto':
-        safe_text = '<span style="color:{color}">{text}</span>'.format(color='black', text=text)
+    elif area_code == 'CIE':
+        safe_text = '<i class="bi bi-pie-chart icon bg-secondary text-white rounded-circle p-3"></i>'
         return mark_safe(safe_text)
+
+    elif area_code == 'SEG' and chosen_area == 'SEG':
+        safe_text = '<i class="bi bi-shield-shaded icon bg-primary text-white rounded-circle p-3"></i>'
+        return mark_safe(safe_text)
+    elif area_code == 'SEG':
+        safe_text = '<i class="bi bi-shield-shaded icon bg-secondary text-white rounded-circle p-3"></i>'
+        return mark_safe(safe_text)
+
+    elif area_code == 'PRO' and chosen_area == 'PRO':
+        safe_text = '<i class="bi bi-box-seam icon bg-primary text-white rounded-circle p-3"></i>'
+        return mark_safe(safe_text)
+    elif area_code == 'PRO':
+        safe_text = '<i class="bi bi-box-seam icon bg-secondary text-white rounded-circle p-3"></i>'
+        return mark_safe(safe_text)
+
     else:
-        return text
-
-@register.filter
-def Area_filter(areaCode):
-
-    #return 
-    "grey out all other area icons except the one that was clicked on"
+        safe_text = '<i class="bi bi-bug icon bg-primary text-white rounded-circle p-3"></i>'
+        return mark_safe(safe_text)
+    
+    
