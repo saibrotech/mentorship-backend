@@ -32,7 +32,6 @@
 }
 
 .div-jobs {
-    margin-right: 50px;
     margin-bottom: 150px;
 }
 
@@ -81,6 +80,10 @@ body {
 
     .bg-area {
         background-color: #E5F3FF;
+    }
+
+    .list-jobs {
+        padding: 10px;
     }
 
     .text-size {
