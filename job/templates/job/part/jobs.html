@@ -4,26 +4,22 @@
     <h5 class="font-weight-bold text-center p-4">Vagas mais recentes</h5>
     <ul class="list-group bgjobs">
         {% for job in jobs %}
-        <li class="list-group-item d-flex justify-content-between">
+        <li class="list-group-item">
             <div class="row">
-                <div class="col list-jobs">
-                    <div class="row">
-                        <div class="col flex-grow-0 align-self-center m-3">
-                            <i class="bi bi-code-slash icon bg-primary text-white rounded-circle p-3 m-3"></i>
-                        </div>
-                        <div class="col list-jobs">
-                            <p class="fsize-sm">{{job.company.name}}</p>
-                            <h6 class="font-weight-bold">{{job.title}}</h6>
-                            <p class="fsize-smaller"><i class="bi bi-geo-alt text-primary pr-2"></i>{{job.location}}</p>
-                        </div>
-                    </div>
+                <div class="col-4 col-sm list-jobs flex-grow-0 align-self-center">
+                    <i class="bi bi-code-slash icon bg-primary text-white rounded-circle p-3 m-3"></i>
+                </div>
+                <div class="col-8 col-sm list-jobs">
+                    <p class="fsize-sm">{{job.company.name}}</p>
+                    <h6 class="font-weight-bold">{{job.title}}</h6>
+                    <p class="fsize-smaller"><i class="bi bi-geo-alt text-primary pr-2"></i>{{job.location}}</p>                    
+                </div>
+                <div class="col align-self-center text-right">
+                    <button class="btn color-button size-button">
+                        <a class="btn text-white" target="_blank" href="{{job.link}}">Detalhes</a>
+                    </button>
                 </div>
             </div>
-            <span>
-                <button class="btn color-button ml-5 mt-4">
-                    <a class="btn text-white" target="_blank" href="{{job.link}}">Detalhes</a>
-                </button>
-            </span>
         </li>
         {% endfor %}
     </ul>

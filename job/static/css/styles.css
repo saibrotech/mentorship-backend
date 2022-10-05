@@ -86,6 +86,11 @@ body {
         padding: 10px;
     }
 
+    .size-button {
+        display: block;
+        width: 100%;
+    }
+
     .text-size {
         font-size: 30px;
     }
