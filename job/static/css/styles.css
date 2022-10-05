@@ -10,6 +10,8 @@
     color:#FFFFFF;
 }
 
+
+
 .bgblue {
     background:#0086FF;
 }
@@ -57,10 +59,12 @@
 }
 
 .icon {
+    display: inline-block;
     font-size: 1.5em; 
     height: 64px;
     width: 64px;
-    text-align: center
+    text-align: center;
+    padding-top: 13px;
 }
 
 body {
