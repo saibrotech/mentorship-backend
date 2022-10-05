@@ -11,9 +11,9 @@
                 </div>
                 <div class="d-flex justify-content-center p-2">
                     {%if chosen_area == area.code%}
-                    {{area.name | ExampleCustom_filter:"dogerblue"}}
+                    <span class="text-primary">{{area.name}}</span>
                     {%else%}
-                    {{area.name | ExampleCustom_filter:"gray"}}
+                    <span class="text-secondary">{{area.name}}</span>
                     {%endif%}
                 </div>
             </a> 
