@@ -1,3 +1,4 @@
+{% load job_tags %}
 <h3 class="text-center mt-5">Áreas</h3>
 
 <div class="container">
@@ -6,13 +7,19 @@
         <div class="col">
             <a href="?area={{area.code}}">
                 <div class="d-flex justify-content-center p-2">
-                    <i class="bi bi-code-slash icon bg-primary text-white rounded-circle p-3"></i>
+                    {{area.code | area_icon:chosen_area}}
                 </div>
                 <div class="d-flex justify-content-center p-2">
-                    {{area.name}}
+                    {%if chosen_area == area.code%}
+                    <span class="text-primary">{{area.name}}</span>
+                    {%else%}
+                    <span class="text-secondary">{{area.name}}</span>
+                    {%endif%}
                 </div>
-            </a>
+            </a> 
         </div>
         {% endfor %}
     </div>
 </div>
+
+

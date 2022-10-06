@@ -5,6 +5,8 @@ from django.shortcuts import render
 
 def index(request):
     areas = Category.objects.all()
+    area = ''
+    categorys = Category.objects.all()
 
     if 'search' in request.GET:
         search = request.GET['search']
@@ -17,6 +19,8 @@ def index(request):
 
     context = {
         'areas': areas,
-        'jobs': jobs
+        'jobs': jobs,
+        'chosen_area': area,
+        'categorys': categorys
     }
     return render(request, 'job/index.html', context)
