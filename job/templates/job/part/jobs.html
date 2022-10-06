@@ -4,6 +4,11 @@
 <div class="clearfix"></div>
 <div class="div-jobs mt-5">
     <h5 class="font-weight-bold text-sm-center p-4">Vagas mais recentes</h5>
+    {% if not jobs %}
+    <div class="alert alert-info" role="alert">
+        Nenhuma vaga encontrada.
+    </div>
+    {% endif %}
     <ul class="list-group bgjobs">
         {% for job in jobs %}
 
