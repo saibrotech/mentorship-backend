@@ -55,11 +55,10 @@
     font-size: 1.5em;
 }
 
-.img-highlights {
-    object-fit: cover;
-    margin-top: 0px;
-    width: 100%;
-    object-position: -100px -80px;
+.highlights-image {
+    background: url('/static/job/img/junior.png') no-repeat;
+    background-size: contain;
+    background-position: bottom;
 }
 
 body {
@@ -68,10 +67,6 @@ body {
 
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {
-    .img-highlights {
-        object-position: -50px 0px;
-        min-height: 300px;
-    }
 
    .display-area {
         max-width:140px;
@@ -102,10 +97,6 @@ body {
 
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) and (max-width: 767.98px) {
-    .img-highlights {
-        max-height: 320px;
-        object-position: -60px -30px;
-    }
 
     .display-area {
         max-width:200px;
@@ -126,10 +117,6 @@ body {
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .img-highlights {
-        max-height: 450px;
-        object-position: -10px -50px;
-    }
 
     .display-area {
         max-width:120px;
@@ -142,9 +129,6 @@ body {
 
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    .img-highlights {
-        max-height: 500px;
-    }
 
     .form2 {
         display: none;
@@ -153,9 +137,6 @@ body {
 
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-    .img-highlights {
-        max-height: 700px;
-    }
 
     .form2 {
         display: none;
