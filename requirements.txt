@@ -3,3 +3,6 @@ psycopg2-binary==2.9.3
 djangorestframework==3.14.0
 markdown==3.4.1
 django-filter==22.1
+pep8==1.7.1
+autopep8
+wemake-python-styleguide==0.17.0
