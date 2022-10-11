@@ -10,8 +10,7 @@ No terminal:
 
 `docker compose up`
 
-Isso irá rodar o docker apenas da base da dados PostgreSQL
-
+This will run only once in the PostgreSQL database
 
 ### Create environment
 
@@ -58,6 +57,8 @@ After create or edit a model:
 
 
 ### Run Pylinter
+
+Looks for "errors" in the code.
 
 `flake8 --format=wemake your_module.py`
 
