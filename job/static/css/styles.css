@@ -81,17 +81,12 @@ body {
         padding: 10px;
     }
 
-    .size-button {
-        display: block;
-        width: 100%;
-    }
-
     .text-size {
         font-size: 30px;
     }
 
-    .form1 {
-        display: none;
+    .size-button {
+        width: 100%;
     }
 }
 
@@ -109,10 +104,6 @@ body {
     .text-size {
         font-size: 30px;
     }
-
-    .form1 {
-        display: none;
-    }
 }
 
 /*Medium devices (tablets, 768px and up)*/
@@ -121,24 +112,14 @@ body {
     .display-area {
         max-width:120px;
     }
-
-    .form2 {
-        display: none;
-    }
 }
 
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) and (max-width: 1199.98px) {
 
-    .form2 {
-        display: none;
-    }
 }
 
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
 
-    .form2 {
-        display: none;
-    }
 }
