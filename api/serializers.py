@@ -1,15 +1,18 @@
 from rest_framework import serializers
 from job.models import Category, Company, Job
 
+
 class CompanySerializer(serializers.ModelSerializer):
     class Meta:
         model = Company
         fields = ['id', 'name']
 
+
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ['id', 'name', 'code']
+
 
 class JobSerializer(serializers.ModelSerializer):
 

@@ -60,17 +60,13 @@ After create or edit a model:
 
 Looks for "errors" in the code.
 
-`flake8 --format=wemake your_module.py`
-
-> Example:  `flake8 --format=wemake job/` This line of code will run the pylinter on all the python files inside the job folder and it's children.
+> Example:  `flake8 --format=wemake --exclude .git,venv,migrations` This line of code will run the pylinter on all the python files inside the project excluding the .git venv and migration folders.
 
 ### Run Auto-Formatter
 
 Tries to automatically fix some of the code "errors" that would show up on the pylinter.
 
-`autopep8 --in-place --aggressive --aggressive <filename>`
-
-> Example:  `autopep8 --in-place --aggressive --aggressive job/`  This line of code will run the auto-formatter on all the python files inside the job folder and it's children.
+> Example:  `autopep8 --in-place --aggressive --aggressive --recursive --exclude ".git,venv,migrations" .`  This line of code will run the auto-formatter on all the python files inside the project folder except .git, venv and migrations.
 
 ### Figma Prototype
 

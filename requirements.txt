@@ -6,3 +6,4 @@ django-filter==22.1
 pep8==1.7.1
 autopep8
 wemake-python-styleguide==0.17.0
+flake8-django==1.1.5
