@@ -11,11 +11,15 @@
 }
 
 .bgblue {
-    background: #0086FF;
+    background-color: #0086FF;
 }
 
 .bgwhite {
     background-color: #FFFFFF;
+}
+
+.bg-gray {
+    background-color: #E3E3E3;
 }
 
 .bgjobs {
@@ -45,14 +49,12 @@
 }
 
 .icon {
-    font-size: 1.5em;
+    display: inline-block;
+    font-size: 1.5em; 
     height: 64px;
     width: 64px;
     text-align: center;
-}
-
-.iconsize {
-    font-size: 1.5em;
+    padding-top: 13px;
 }
 
 .highlights-image {
@@ -63,63 +65,4 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-}
-
-/*Extra small devices (portrait phones, less than 576px)*/
-@media (max-width: 575.98px) {
-
-   .display-area {
-        max-width:140px;
-        margin: 20px;
-    }
-
-    .bg-area {
-        background-color: #E5F3FF;
-    }
-
-    .list-jobs {
-        padding: 10px;
-    }
-
-    .text-size {
-        font-size: 30px;
-    }
-
-    .size-button {
-        width: 100%;
-    }
-}
-
-/*Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) and (max-width: 767.98px) {
-
-    .display-area {
-        max-width:200px;
-    }
-
-    .bg-area {
-        background-color: #E5F3FF;
-    }
-
-    .text-size {
-        font-size: 30px;
-    }
-}
-
-/*Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) and (max-width: 991.98px) {
-
-    .display-area {
-        max-width:120px;
-    }
-}
-
-/*Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) and (max-width: 1199.98px) {
-
-}
-
-/*Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) {
-
 }
