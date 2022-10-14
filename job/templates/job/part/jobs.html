@@ -1,21 +1,28 @@
 {% load static %}
-<div class="clearfix"></div>
+{% load job_tags %}
 <div class="div-jobs container">
     <h5 class="font-weight-bold text-center p-4">Vagas mais recentes</h5>
+    {% if not jobs %}
+    <div class="alert alert-info" role="alert">
+        Nenhuma vaga encontrada.
+    </div>
+    {% endif %}
     <ul class="list-group bgjobs">
         {% for job in jobs %}
         <li class="list-group-item">
-            <div class="row">
-                <div class="col-4 col-sm p-1 flex-grow-0 align-self-center">
-                    <i class="bi bi-code-slash icon bg-primary text-white rounded-circle p-3 m-3"></i>
+            <div class="d-flex flex-column flex-sm-row">
+                <div class="flex-fill d-flex">
+                    <div class="align-self-center pr-3">
+                        {{ job.category.code  | area_icon:chosen_area }}
+                    </div>
+                    <div class="flex-fill pr-3">
+                        <p class="fsize-sm">{{job.company.name}}</p>
+                        <h6 class="font-weight-bold">{{job.title}}</h6>
+                        <p class="fsize-smaller"><i class="bi bi-geo-alt text-primary pr-2"></i>{{job.location}}</p>                    
+                    </div>
                 </div>
-                <div class="col-8 col-sm">
-                    <p class="fsize-sm">{{job.company.name}}</p>
-                    <h6 class="font-weight-bold">{{job.title}}</h6>
-                    <p class="fsize-smaller"><i class="bi bi-geo-alt text-primary pr-2"></i>{{job.location}}</p>                    
-                </div>
-                <div class="col-lg-2 col-md-3 align-self-center text-right">
-                    <button class="w-100 btn color-button">
+                <div class="d-flex align-items-center">
+                    <button class="btn color-button w-100">
                         <a class="btn text-white" target="_blank" href="{{job.link}}">Detalhes</a>
                     </button>
                 </div>
