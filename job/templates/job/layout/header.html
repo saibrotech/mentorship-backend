@@ -1,23 +1,28 @@
 {% load static %}
-<header>
-    <nav class="navbar navbar-expand-sm bgwhite">
-      <div> 
-        <a href="" class="navbar-brand blue font-weight-bold">
-            <img src="{% static 'job/img/logo.png'%}" alt="logo">
-            Vagas Para Júnior</a>
-      </div>
-
-        <ul class="navbar-nav ml-auto">
-            <li class="navbar-item">
-                <a href="" class="nav-link">
-                <button class="btn btn-link rounded">Login</button>  
-                </a>
-            </li>
-            <li class="navbar-item">
-                <a href="" class="nav-link">
-                    <button class="btn btn-primary rounded">Cadastrar</button>
-                </a>
-            </li>
-        </ul>
+<header class="border-bottom shadow-sm mb-1">
+    <nav class="navbar navbar-expand-md bgwhite">
+        <div>
+            <a href="" class="navbar-brand blue font-weight-bold">
+                <img src="{% static 'job/img/logo.png'%}" alt="logo">
+                Vagas Para Júnior
+            </a>
+        </div>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navheader">
+            <span class="navbar-toggler-icon"><i class="bi bi-list icon"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navheader">
+            <ul class="navbar-nav ml-auto d-flex flex-row justify-content-end">
+                <li class="navbar-item">
+                    <a href="" class="nav-link">
+                        <button class="btn btn-link rounded">Login</button>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a href="" class="nav-link">
+                        <button class="btn btn-primary rounded">Cadastrar</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
 </header>
