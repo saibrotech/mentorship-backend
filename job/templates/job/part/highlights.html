@@ -1,21 +1,23 @@
 {% load static %}
-
-<div class="div-highlights">
-    <section class = "h1 font-weight-bold">
-        <p>Encontre o seu primeiro <span class="blue">Emprego</span> na área de <span class="blue">TI</span></p>
-    </section>
-    <section>
-        <p class="text-black-50">Vagas de emprego pré-selecionadas para quem está começando na carreira de tecnologia
-            da informação.
-            <a class="orange" href="">Saiba mais...</a>
-        </p>
-    </section>
-    <form class="clearfix mt-5">
-        <div class="input-group div-search">
-            <input class="form-control form-control-lg  border-dark fsize-sm" type="text" name="search" placeholder="Busque por um título de vaga...">
-            <div class="input-group-append">
-                <input type="submit" value="Buscar" class="btn color-button text-white font-weight-bold">
-            </div>
+<div class="container mb-4">
+    <div class="row">
+        <div class="col col-lg-8">
+            <section class="h1 font-weight-bold mt-4">
+                <p>Encontre o seu primeiro <span class="blue">Emprego</span> na área de <span class="blue">TI</span>
+                </p>
+            </section>
+            <section>
+                <p class="text-black-50">Vagas de emprego pré-selecionadas para quem está começando na carreira de
+                    tecnologia da informação.
+                    <a class="orange" href="">Saiba mais...</a>
+                </p>
+            </section>
+            <form class="d-flex flex-column flex-sm-row">
+                <input class=" form-control border-dark fsize-sm mr-2 mb-2 mb-sm-0" type="text" name="search"
+                    placeholder="Busque por um título de vaga...">
+                <button type="submit" class="btn btn-primary color-button text-white font-weight-bold">Buscar</button>
+            </form>
         </div>
-    </form> 
+        <div class="col d-none d-sm-block highlights-image"></div>
+    </div>
 </div>
