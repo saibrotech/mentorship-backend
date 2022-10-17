@@ -13,7 +13,9 @@ ICON_DICT = {
     'PRO': 'bi-box-seam'
 }
 
-#Function that returns a icon for the area depending on the area_code.
+# Function that returns a icon for the area depending on the area_code.
+
+
 @register.filter(is_safe=True)
 def area_icon(area_code, chosen_area):
     if area_code == chosen_area:
