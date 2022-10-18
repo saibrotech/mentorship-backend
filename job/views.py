@@ -1,4 +1,3 @@
-from unicodedata import category
 from job.models import Category, Job
 from django.shortcuts import render
 
@@ -24,3 +23,10 @@ def index(request):
         'categorys': categorys
     }
     return render(request, 'job/index.html', context)
+
+def job_detail(request, id):
+    job = Job.objects.get(pk=id)
+    context = {
+        'job': job
+    }
+    return render(request, 'job/job_detail.html', context)
