@@ -62,7 +62,7 @@ class Job(models.Model):
     ]
 
     title = models.CharField(max_length=50)
-    date_posted = models.DateField
+    date_posted = models.DateField()
     experience_level = models.CharField(max_length=6, choices=XP_LEVELS)
     type = models.CharField(max_length=6, choices=JOB_TYPES)
     location = models.CharField(max_length=50)

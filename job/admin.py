@@ -40,7 +40,8 @@ class JobAdmin(admin.ModelAdmin):
         'requirements',
         'link',
         'category_id',
-        'company_id')
+        'company_id',
+        'date_posted')
     search_fields = ['id', 'title', 'type', 'location', 'requirements']
     list_filter = ('category',)
 
