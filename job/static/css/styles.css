@@ -1,5 +1,5 @@
 .blue {
-    color:#0086FF;
+    color: #0086FF;
 }
 
 .orange {
@@ -7,17 +7,19 @@
 }
 
 .white {
-    color:#FFFFFF;
+    color: #FFFFFF;
 }
 
-
-
 .bgblue {
-    background:#0086FF;
+    background-color: #0086FF;
 }
 
 .bgwhite {
     background-color: #FFFFFF;
+}
+
+.bg-gray {
+    background-color: #E3E3E3;
 }
 
 .bgjobs {
@@ -29,20 +31,12 @@
 }
 
 .div-img {
-    margin-top:-100px;
-    margin-right:60px;
-}
-
-.div-highlights {
-    background-image: url('/static/job/img/junior.png');
-    background-position: right top -100px;
-    background-repeat: no-repeat;
-    height: 600px;
+    margin-top: -100px;
+    margin-right: 60px;
 }
 
 .div-jobs {
-   margin-right: 50px;
-   margin-bottom: 150px;
+    margin-bottom: 150px;
 }
 
 .fsize-smaller {
@@ -54,10 +48,6 @@
     opacity: 50%;
 }
 
-.div-search {
-    width: 700px;
-}
-
 .icon {
     display: inline-block;
     font-size: 1.5em; 
@@ -65,6 +55,12 @@
     width: 64px;
     text-align: center;
     padding-top: 13px;
+}
+
+.highlights-image {
+    background: url('/static/job/img/junior.png') no-repeat;
+    background-size: contain;
+    background-position: bottom;
 }
 
 body {

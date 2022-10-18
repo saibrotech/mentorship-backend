@@ -10,7 +10,7 @@ No terminal:
 
 `docker compose up`
 
-Isso irá rodar o docker apenas da base da dados PostgreSQL
+This will run only once in the PostgreSQL database
 
 ### Create environment
 
@@ -19,6 +19,7 @@ Isso irá rodar o docker apenas da base da dados PostgreSQL
 Select the interpreter before:
 
 `pip install -r requirements.txt`
+
 
 ### Run server
 
@@ -32,18 +33,22 @@ Select the interpreter before:
 
 `python manage.py runserver`
 
+Access: http://127.0.0.1:8000/job
+
 
 ### Run fixtures
+
 `python manage.py loaddata category`
 
 `python manage.py loaddata company`
 
 `python manage.py loaddata job`
 
+
 ### Admin
 
-http://127.0.0.1:8000/admin
-
+Access: http://127.0.0.1:8000/admin
+    
 After create or edit a model:
 
 `python manage.py makemigrations` to create migration files
@@ -51,9 +56,23 @@ After create or edit a model:
 `python manage.py migrate` to apply to data base
 
 
+### Run Pylinter
+
+Looks for "errors" in the code.
+
+> Example:  `flake8 --format=wemake --exclude .git,venv,migrations` This line of code will run the pylinter on all the python files inside the project excluding the .git venv and migration folders.
+
+### Run Auto-Formatter
+
+Tries to automatically fix some of the code "errors" that would show up on the pylinter.
+
+> Example:  `autopep8 --in-place --aggressive --aggressive --recursive --exclude ".git,venv,migrations" .`  This line of code will run the auto-formatter on all the python files inside the project folder except .git, venv and migrations.
+
 ### Figma Prototype
 
 https://www.figma.com/file/Qg08r5xH2nlWXmAao32k0I/Vagas-para-J%C3%BAnior?node-id=105%3A466
+
+
 
 ## Produção
 
