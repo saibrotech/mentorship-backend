@@ -1,25 +1,19 @@
 {% load static %}
-<header class="border-bottom shadow-sm mb-1">
-    <nav class="navbar navbar-expand-md bgwhite">
-        <div>
-            <a href="" class="navbar-brand blue font-weight-bold">
+<header class="fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light justify-content-between shadow-sm">
+        <div class="navbar-brand">
+            <a href="" class="blue font-weight-bold">
                 <img src="{% static 'job/img/logo.png'%}" alt="logo">
-                Vagas Para Júnior
-            </a>
+                Vagas Para Júnior</a>
         </div>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navheader">
-            <span class="navbar-toggler-icon"><i class="bi bi-list icon"></i></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navheader">
-            <ul class="navbar-nav ml-auto d-flex flex-row justify-content-end">
-                <li class="navbar-item">
-                    <a href="" class="nav-link">
-                        <button class="btn btn-link rounded">Login</button>
-                    </a>
-                </li>
-                <li class="navbar-item">
-                    <a href="" class="nav-link">
-                        <button class="btn btn-primary rounded">Cadastrar</button>
+        <div class="collapse navbar-collapse justify-content-end" id="navheader">
+            <ul class="navbar-nav">
+                <li class="navbar-item ml-auto">
+                    <a href="https://forms.gle/B8a15GR8m5KZoSHP7" class="nav-link">
+                        <button class="btn btn-primary rounded">Enviar vaga</button>
                     </a>
                 </li>
             </ul>
