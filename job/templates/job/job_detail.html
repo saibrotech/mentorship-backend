@@ -25,11 +25,11 @@
     <main>
         <section class="bgjobs pb-4" >
             <h2 class="pt-4 text-center">{{job.title}}</h2>
-            <h5 class="font-italic text-center">{{job.company}}</h5>
+            <h5 class="font-italic text-center">{{job.company.name}}</h5>
 
             <nav class="mt-4 text-center">
-                <button class="btn btn-secondary" href="{{job.company}}" target="_blank">Ver empresa</button>
-                <button class="btn btn-primary" href="{{job.link}}" target="_blank">Candidate-se</button>
+                <a class="btn btn-secondary" href="{{job.company}}" target="_blank" role="button">Ver empresa</a>
+                <a class="btn btn-primary" href="{{job.link}}" target="_blank" role="button">Candidate-se</a>
             </nav>
         </section>
 
