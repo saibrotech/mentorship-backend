@@ -38,7 +38,6 @@
     background-position: right top -100px;
     background-repeat: no-repeat;
     height: 600px;
-    margin-top: 85px;
 }
 
 .div-jobs {
@@ -70,4 +69,5 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    padding-top: 100px;
 }
