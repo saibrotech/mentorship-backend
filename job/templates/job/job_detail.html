@@ -5,103 +5,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Detalhes da Vaga</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Estilos CSS e Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
 </head>
-<style>
-    * {
-        margin: 0px;
-        padding: 0px;
-    }
 
-    main {
-        margin: 50px;
-    }
-
-    section#vaga {
-        background-color: #F4F5F7;
-        height: 211px;
-        width: 100vw;
-    }
-
-    section h2#nome-da-vaga {
-        text-align: center;
-        padding-top: 40px;
-    }
-
-    section h5#nome-da-empresa {
-        text-align: center;
-        font-style: italic;
-    }
-
-    section a {
-        padding: 10px;
-        border-radius: 10px;
-    }
-
-    section > nav > a#btn-empresa {
-        background-color: rgb(170, 170, 170, 0.5);
-        color: black;
-        border: 1px solid rgba(0, 0, 0, 0.2);
-    }
-
-    section > nav > a#btn-candidatese {
-        background-color: rgb(255, 56, 0, 1);
-        color: white;
-    }
-
-    section > nav {
-        text-align: center;
-        margin-top: 30px;
-    }
-
-    a#btn-empresa:hover {
-        text-decoration: none;
-        background-color: rgb(170, 170, 170, 0.7);
-        font-weight: bolder;
-        padding: 13px;
-        border: 1px solid rgb(95, 35, 0);
-    }
-
-    a#btn-candidatese:hover {
-        text-decoration: none;
-        font-size: medium;
-        font-weight: bolder;
-        padding: 13px;
-        border: 1px solid rgb(95, 35, 0);
-    }
-
-</style>
 <body>
     {% include './layout/header.html' %}
 
-    <section id="vaga">
-        <h2 id="nome-da-vaga">{{job.title}}</h2>
-        <h5 id="nome-da-empresa">{{job.company}}</h5>
-
-        <nav>
-            <a href="{{job.company}}" target="_blank" id="btn-empresa">Ver empresa</a>
-            <a href="{{job.link}}" target="_blank" id="btn-candidatese">Candidate-se</a>
-        </nav>
-    </section>
-
     <main>
-        <h2>Informações da Vaga</h2>
-        <p>
-            <strong>Local:</strong> {{job.location}} <br>
-            <strong>Data de Publicação:</strong> {{job.date_posted}}<br>
-            <strong>Nível Escolar:</strong> <br>
-            <strong>Inglês Mínimo:</strong>
-        </p>
-        <h2>Descrição da Vaga</h2>
-        <p>{{job.requirements}}</p>
+        <section class="bgjobs pb-4" >
+            <h2 class="pt-4 text-center">{{job.title}}</h2>
+            <h5 class="font-italic text-center">{{job.company}}</h5>
+
+            <nav class="mt-4 text-center">
+                <button class="btn btn-secondary" href="{{job.company}}" target="_blank">Ver empresa</button>
+                <button class="btn btn-primary" href="{{job.link}}" target="_blank">Candidate-se</button>
+            </nav>
+        </section>
+
+        <section class="m-5 pb-3">
+            <h3>Informações da Vaga</h3>
+            <ul class="list-unstyled">
+                <li><strong>Local:</strong> {{job.location}}</li>
+                <li><strong>Data de Publicação:</strong> {{job.date_posted}}</li>
+                <li><strong>Nível Escolar:</strong></li>
+                <li><strong>Inglês Mínimo:</strong></li>
+            </ul>
+            <h3>Descrição da Vaga</h3>
+            <p class="text-justify">{{job.requirements}}</p>
+        </section>
     </main>
 
     {% include './layout/footer.html' %}
@@ -109,5 +50,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
-
 </html>
