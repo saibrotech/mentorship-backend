@@ -1,19 +1,32 @@
 {% load static %}
-<div class="clearfix"></div>
-<div class="div-jobs mt-5">
-    <h5 class="font-weight-bold text-sm-center p-4">Vagas mais recentes</h5>
+{% load job_tags %}
+<div class="div-jobs container">
+    <h5 class="font-weight-bold text-center p-4">Vagas mais recentes</h5>
+    {% if not jobs %}
+    <div class="alert alert-info" role="alert">
+        Nenhuma vaga encontrada.
+    </div>
+    {% endif %}
     <ul class="list-group bgjobs">
         {% for job in jobs %}
         <li class="list-group-item">
-            <i class="bi bi-code-slash float-left icon bg-primary text-white rounded-circle p-3 m-4"></i>
-            <div class="float-left">
-                <p class="fsize-sm">{{job.company.name}}</p>
-                <h6 class="font-weight-bold">{{job.title}}</h6>
-                <p class="fsize-smaller"><i class="bi bi-geo-alt text-primary pr-2"></i>{{job.location}}</p>
+            <div class="d-flex flex-column flex-sm-row">
+                <div class="flex-fill d-flex">
+                    <div class="align-self-center pr-3">
+                        {{ job.category.code  | area_icon:chosen_area }}
+                    </div>
+                    <div class="flex-fill pr-3">
+                        <p class="fsize-sm">{{job.company.name}}</p>
+                        <h6 class="font-weight-bold">{{job.title}}</h6>
+                        <p class="fsize-smaller"><i class="bi bi-geo-alt text-primary pr-2"></i>{{job.location}}</p>                    
+                    </div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <button class="btn color-button w-100">
+                        <a class="btn text-white" target="_blank" href="{{job.link}}">Detalhes</a>
+                    </button>
+                </div>
             </div>
-            <button class="btn color-button float-right mt-4">
-                <a class="btn text-white" target="_blank" href="{{job.link}}">Detalhes</a>
-            </button>
         </li>
         {% endfor %}
     </ul>
