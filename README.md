@@ -70,8 +70,7 @@ Tries to automatically fix some of the code "errors" that would show up on the p
 
 ### Figma Prototype
 
-https://www.figma.com/file/Qg08r5xH2nlWXmAao32k0I/Vagas-para-J%C3%BAnior?node-id=105%3A466
-
+https://www.figma.com/file/EMwv4Gxa2o9mj1uZ1jj111/Vagas-para-J%C3%BAnior-(Novo)?node-id=991%3A8629
 
 
 ## Produção

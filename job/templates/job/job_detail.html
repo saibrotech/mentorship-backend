@@ -1,29 +1,33 @@
 {% load static %}
+{% load compress %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes da Vaga</title>
-    <link rel="shortcut icon" href="../static/job/img/favicon.ico" type="image/x-icon">
+    <title>Vagas Para Júnior</title>
 
-    <!-- Google Fonts -->
+    <link rel="icon" href="/static/job/img/favicon.ico" type="image/x-icon">
+
+
+    {% compress css %}
+    <link type="text/x-scss" href="{% static 'css/theme.scss' %}" rel="stylesheet" media="screen">
+    {% endcompress %}
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <!-- Estilos CSS e Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
 </head>
-
 <body>
     {% include './layout/header.html' %}
 
-    <main>
-        <section class="bgjobs pb-4" >
+    <main class="container">
+        <section class="mb-4">
             <h2 class="pt-4 text-center">{{job.title}}</h2>
             <h5 class="font-italic text-center">{{job.company.name}}</h5>
 
@@ -31,24 +35,28 @@
                 <a class="btn btn-secondary" href="{{job.company.website}}" target="_blank" role="button">Ver empresa</a>
                 <a class="btn btn-primary" href="{{job.link}}" target="_blank" role="button">Candidate-se</a>
             </nav>
-        </section>
 
-        <section class="m-5 pb-3">
-            <h3>Informações da Vaga</h3>
-            <ul class="list-unstyled">
+
+            <ul class="mt-4 list-unstyled">
                 <li><strong>Local:</strong> {{job.location}}</li>
                 <li><strong>Data de Publicação:</strong> {{job.date_posted}}</li>
                 <li><strong>Nível Escolar:</strong></li>
                 <li><strong>Inglês Mínimo:</strong></li>
             </ul>
-            <h3>Descrição da Vaga</h3>
-            <p class="text-justify">{{job.requirements}}</p>
+
+        </section>
+
+        <section>
+            <h3>Descrição</h3>
+            <p>{{job.requirements | linebreaks}}</p>
         </section>
     </main>
 
     {% include './layout/footer.html' %}
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </body>
 </html>

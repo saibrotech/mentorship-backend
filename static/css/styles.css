@@ -1,0 +1,24 @@
+body {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.bg-gray {
+    background-color: #E3E3E3;
+}
+
+.icon {
+    display: inline-block;
+    font-size: 1.5em; 
+    height: 64px;
+    width: 64px;
+    text-align: center;
+    padding-top: 13px;
+}
+
+.highlights-image {
+    background: url('/static/job/img/junior.png') no-repeat;
+    background-size: contain;
+    background-position: bottom;
+}
+
