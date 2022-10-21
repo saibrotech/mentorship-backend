@@ -21,6 +21,8 @@ jobs:
     # first step 
     - name: Set up Python 3.9
       uses: actions/setup-python@v4
+      with:
+       python-version: '3.9' 
     # second step, this one installs the dependencies for the project to work on the Github machine.    
     - name: Install Dependencies
       run: |
