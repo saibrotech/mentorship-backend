@@ -1,4 +1,5 @@
 # custom tags stay in here
+from re import I
 from django import template
 from django.utils.safestring import mark_safe
 
@@ -15,13 +16,18 @@ ICON_DICT = {
 
 # Function that returns a icon for the area depending on the area_code.
 
-
 @register.filter(is_safe=True)
 def area_icon(area_code, chosen_area):
     if area_code == chosen_area:
         background = 'bg-primary'
     else:
         background = 'bg-secondary'
-    class_icon = ICON_DICT[area_code] if ICON_DICT[area_code] else 'bi-bug'
-    safe_text = f'<i class="bi {class_icon} icon {background} text-white rounded-circle"></i>'
-    return mark_safe(safe_text)
+    # A exception incase a the category in the database isnt initalized in the icon dictionary
+    try:
+        class_icon = ICON_DICT[area_code] if ICON_DICT[area_code] else 'bi-bug'
+        safe_text = f'<i class="bi {class_icon} icon {background} text-white rounded-circle"></i>'
+        return mark_safe(safe_text)
+    except:
+        print("The category " + area_code + " doesn't exist.");
+        safe_text = f'<i class="bi bi-bug icon {background} text-white rounded-circle"></i>'
+        return mark_safe(safe_text)
