@@ -17,6 +17,7 @@ on:
 jobs:
   # this is the job that builds and publishes the project.
   build-pub-container:
+    # this job will only run if it is accompanied with a tag named *
     if: ${{ github.ref_name == '*' }}
     runs-on: ubuntu-latest
     steps:
