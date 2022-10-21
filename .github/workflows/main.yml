@@ -1,46 +1,20 @@
 # This is where you name you workflow
-name: Test-build-&-publish-workflow
+name: build&publish-workflow
 
 # Controls when the workflow will be triggered
 on:
-  # Triggers the workflow on push events for any branch
+  # Triggers the workflow on push events for a specific tag = * 
   push:
     tags:
       - '*'
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially 
-# or in parallel, in this case, theres a job called django-lint-test and 
-# another called build-pub-container.
+# or in parallel, in this case, theres a one job called build-pub-container.
 jobs:
-  # job 1
-  django-lint-test:
-    runs-on: ubuntu-latest 
-    steps:
-    # this throws the branch in to the github machine so that it can work on it.
-    - uses: actions/checkout@v3
-    # first step 
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v4
-    # second step, this one installs the dependencies for the project to work on the Github machine.    
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    # third step, this runs the linter command.    
-    - name : Run Linter    
-      run: |
-        flake8 --format=wemake --exclude .git,venv,migrations
-    # fourth step, this runs the tests, right now there arent any tests implemented.
-    - name: Run Tests
-      run: |
-        python manage.py test
-
-  # this is the second job that builds and publishes the project.
+  # this is the job that builds and publishes the project.
   build-pub-container:
-    needs: django-lint-test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
