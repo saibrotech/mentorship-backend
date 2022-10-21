@@ -2,8 +2,15 @@
 name: build&publish-workflow
 
 # Controls when the workflow will be triggered
-on: 
- workflow_dispatch:
+on:
+  # Triggers the workflow when the Lint&test workflow is completed sucessfully.
+  workflow_run:
+    workflows: ["Lint&test-workflow"]
+    types:
+      - success
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially 
 # or in parallel, in this case, theres a one job called build-pub-container.
