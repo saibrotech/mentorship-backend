@@ -9,10 +9,8 @@ on:
  workflow_dispatch:
  
 # A workflow run is made up of one or more jobs that can run sequentially 
-# or in parallel, in this case, theres a job called django-lint-test and 
-# another called build-pub-container.
+# or in parallel, in this case, theres one job called django-lint-test.
 jobs:
-  # job 1
   django-lint-test:
     runs-on: ubuntu-latest 
     steps:
