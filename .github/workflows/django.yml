@@ -1,5 +1,5 @@
 # This is where you name you workflow
-name: Test-build-&-publish-workflow
+name: Lint&test-workflow
 
 # Controls when the workflow will be triggered
 # Push Triggers the workflow on push events for any branch
