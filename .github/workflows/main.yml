@@ -2,22 +2,15 @@
 name: build&publish-workflow
 
 # Controls when the workflow will be triggered
-on:
-  # Triggers the workflow when the Lint&test workflow is completed sucessfully.
-  workflow_run:
-    workflows: ["Lint&test-workflow"]
-    types:
-      - requested
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+on: 
+ workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially 
 # or in parallel, in this case, theres a one job called build-pub-container.
 jobs:
   # this is the job that builds and publishes the project.
   build-pub-container:
-    if: ${{ github.event.tag_name == '*' }}
+    if: ${{ github.ref_name == '*' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
