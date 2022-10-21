@@ -1,25 +1,25 @@
-# This is a basic workflow to help you get started with Actions
+# This is where you name you workflow
+name: build&publish-workflow
 
-name: Docker-build-workflow
-
-# Controls when the workflow will run
+# Controls when the workflow will be triggered
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    tags:
-      - '*'
+  # Triggers the workflow when the Lint&test workflow is completed sucessfully.
+  workflow_run:
+    workflows: ["Lint&test-workflow"]
+    types:
+      - success
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# A workflow run is made up of one or more jobs that can run sequentially 
+# or in parallel, in this case, theres a one job called build-pub-container.
 jobs:
-  # This workflow contains a single job called "build"
-  build-container:
-    # The type of runner that the job will run on
+  # this is the job that builds and publishes the project.
+  build-pub-container:
+    # this job will only run if it is accompanied with a tag named *
+    if: ${{ github.ref_name == '*' }}
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - uses: actions/checkout@v3
     - name: Publish to Registry
