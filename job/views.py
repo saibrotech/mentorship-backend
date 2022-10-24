@@ -1,9 +1,12 @@
+""" ."""
+
 from django.shortcuts import render
 
 from job.models import Category, Job
 
 
 def index(request):
+    """ ."""
     areas = Category.objects.all()
     area = ''
     categorys = Category.objects.all()
@@ -21,13 +24,15 @@ def index(request):
         'areas': areas,
         'jobs': jobs,
         'chosen_area': area,
-        'categorys': categorys
+        'categorys': categorys,
     }
     return render(request, 'job/index.html', context)
 
+
 def job_detail(request, id):
+    """ ."""
     job = Job.objects.get(pk=id)
     context = {
-        'job': job
+        'job': job,
     }
     return render(request, 'job/job_detail.html', context)

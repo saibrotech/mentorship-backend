@@ -1,3 +1,5 @@
+""" ."""
+
 from django.contrib import admin
 
 # Register your models here.
@@ -5,11 +7,15 @@ from .models import Category, Company, Job
 
 
 class CategoryAdmin(admin.ModelAdmin):
+    """ ."""
+
     list_display = ('id', 'name', 'main_stacks', 'main_skills', 'pay_range')
     search_fields = ['id', 'name', 'main_stacks', 'main_skills']
 
 
 class CompanyAdmin(admin.ModelAdmin):
+    """ ."""
+
     list_display = (
         'id',
         'name',
@@ -30,6 +36,8 @@ class CompanyAdmin(admin.ModelAdmin):
 
 
 class JobAdmin(admin.ModelAdmin):
+    """ ."""
+
     list_display = (
         'id',
         'title',

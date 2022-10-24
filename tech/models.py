@@ -1,6 +1,6 @@
-# https://docs.djangoproject.com/en/4.0/topics/db/models/
+""" ."""
 
-from unicodedata import category
+# https://docs.djangoproject.com/en/4.0/topics/db/models/
 
 from django.db import models
 
@@ -8,7 +8,14 @@ from django.db import models
 
 
 class Language(models.Model):
-    lang_name = models.CharField(max_length=20)
-    lang_type = models.CharField(max_length=20)
-    origin_country = models.CharField(max_length=20)
+    """ ."""
+
+    size = 20
+    lang_name = models.CharField(max_length=size)
+    lang_type = models.CharField(max_length=size)
+    origin_country = models.CharField(max_length=size)
     origin_year = models.DateField()
+
+    def __str__(self):
+        """ ."""
+        return self.statement

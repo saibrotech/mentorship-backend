@@ -1,4 +1,5 @@
-# custom tags stay in here
+""" ."""
+
 from django import template
 from django.utils.safestring import mark_safe
 
@@ -10,8 +11,9 @@ ICON_DICT = {
     'INF': 'bi-server',
     'CIE': 'bi-pie-chart',
     'SEG': 'bi-shield-shaded',
-    'PRO': 'bi-box-seam'
+    'PRO': 'bi-box-seam',
 }
+""" ."""
 
 # Function that returns a icon for the area depending on the area_code.
 
