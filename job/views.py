@@ -7,14 +7,15 @@ from job.models import Category, Job
 
 def index(request):
     """ ."""
-    areas = Category.objects.all()
     area = ''
+    areas = Category.objects.all()
     categorys = Category.objects.all()
+    request_result = request.GET
 
-    if 'search' in request.GET:
+    if 'search' in request_result:
         search = request.GET['search']
         jobs = Job.objects.filter(title__icontains=search)
-    elif 'area' in request.GET:
+    elif 'area' in request_result:
         area = request.GET['area']
         jobs = Job.objects.filter(category__code=area)
     else:

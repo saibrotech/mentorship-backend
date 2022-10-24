@@ -21,14 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-d&er=#4s=(2w8-xtt7&7ue$vdj=2g7pqi$9)(h^(9711%%v5fl'
-
+SECRET_KEY = (
+    'django-insecure-d&er=#4s=(2w8-xtt7&7ue$vdj=2g7pqi$9)(h^(9711%%v5fl'
+)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -80,7 +78,7 @@ WSGI_APPLICATION = 'mentorship.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
+port = 5432
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -88,8 +86,8 @@ DATABASES = {
         'USER': os.getenv('DB_USER', default='postgres'),
         'PASSWORD': os.getenv('DB_PASSWORD', default='postgres'),
         'HOST': os.getenv('DB_HOST', default='localhost'),
-        'PORT': os.getenv('DB_PORT', default=5432),
-    }
+        'PORT': os.getenv('DB_PORT', default=port),
+    },
 }
 
 # Password validation
@@ -97,16 +95,24 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.MinimumLengthValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.CommonPasswordValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.NumericPasswordValidator'
+        ),
     },
 ]
 
@@ -132,7 +138,7 @@ STATIC_URL = 'static/'
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder'
+    'compressor.finders.CompressorFinder',
 ]
 
 COMPRESS_PRECOMPILERS = (
@@ -145,5 +151,8 @@ COMPRESS_PRECOMPILERS = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 10}
+    'DEFAULT_PAGINATION_CLASS': (
+        'rest_framework.pagination.LimitOffsetPagination'
+    ),
+    'PAGE_SIZE': 10,
+}
