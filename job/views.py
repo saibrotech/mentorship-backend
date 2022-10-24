@@ -1,5 +1,6 @@
-from job.models import Category, Job
 from django.shortcuts import render
+
+from job.models import Category, Job
 
 
 def index(request):

@@ -1,6 +1,7 @@
 # https://docs.djangoproject.com/en/4.0/topics/db/models/
 
 from unicodedata import category
+
 from django.db import models
 
 # Create your models here.
