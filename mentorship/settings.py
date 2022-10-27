@@ -10,9 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
-from pathlib import Path
 import os
-
+import secrets
+from pathlib import Path
+from types import MappingProxyType
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,22 +23,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-d&er=#4s=(2w8-xtt7&7ue$vdj=2g7pqi$9)(h^(9711%%v5fl'
-
+SECRET_KEY = os.getenv('SECRET_KEY', default=secrets.token_urlsafe())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
-
-
+ALLOWED_HOSTS = ()
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = (
     'mentored.apps.MentoredConfig',
     'tech.apps.TechConfig',
     'job.apps.JobConfig',
     'api.apps.ApiConfig',
     'django.contrib.admin',
+    'django.contrib.admindocs',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -46,9 +44,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'compressor',
-]
+)
 
-MIDDLEWARE = [
+MIDDLEWARE = (
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -56,11 +54,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+)
 
 ROOT_URLCONF = 'mentorship.urls'
 
-TEMPLATES = [
+TEMPLATES = (
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
@@ -74,42 +72,55 @@ TEMPLATES = [
             ],
         },
     },
-]
+)
 
 WSGI_APPLICATION = 'mentorship.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
-DATABASES = {
+port = 5432
+DATABASES = MappingProxyType({
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('DB_NAME', default='postgres'),
         'USER': os.getenv('DB_USER', default='postgres'),
         'PASSWORD': os.getenv('DB_PASSWORD', default='postgres'),
         'HOST': os.getenv('DB_HOST', default='localhost'),
-        'PORT': os.getenv('DB_PORT', default=5432),
-    }
-}
+        'PORT': os.getenv('DB_PORT', default=port),
+    },
+})
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = [
+VALIDATOR_NAME = 'NAME'
+
+AUTH_PASSWORD_VALIDATORS = (
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        VALIDATOR_NAME: (
+            (
+                'django.contrib.auth.password_validation' +
+                '.UserAttributeSimilarityValidator'
+            )
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        VALIDATOR_NAME: (
+            'django.contrib.auth.password_validation.MinimumLengthValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        VALIDATOR_NAME: (
+            'django.contrib.auth.password_validation.CommonPasswordValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        VALIDATOR_NAME: (
+            'django.contrib.auth.password_validation.NumericPasswordValidator'
+        ),
     },
-]
+)
 
 
 # Internationalization
@@ -130,11 +141,11 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = 'static/'
 
-STATICFILES_FINDERS = [
+STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder'
-]
+    'compressor.finders.CompressorFinder',
+)
 
 COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
@@ -145,6 +156,9 @@ COMPRESS_PRECOMPILERS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 10}
+REST_FRAMEWORK = MappingProxyType({
+    'DEFAULT_PAGINATION_CLASS': (
+        'rest_framework.pagination.LimitOffsetPagination'
+    ),
+    'PAGE_SIZE': 10,
+})

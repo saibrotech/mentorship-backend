@@ -1,17 +1,28 @@
-from job.models import Category, Job
+"""Views for job App."""
+
 from django.shortcuts import render
+
+from job.models import Category, Job
 
 
 def index(request):
-    areas = Category.objects.all()
+    """
+    Home of job App.
+
+    Args:
+        request: HTTP request
+
+    Returns:
+        HTML
+    """
     area = ''
-    categorys = Category.objects.all()
+    areas = Category.objects.all()
 
     if 'search' in request.GET:
-        search = request.GET['search']
+        search = request.GET.get('search')
         jobs = Job.objects.filter(title__icontains=search)
     elif 'area' in request.GET:
-        area = request.GET['area']
+        area = request.GET.get('area')
         jobs = Job.objects.filter(category__code=area)
     else:
         jobs = Job.objects.all()
@@ -20,13 +31,23 @@ def index(request):
         'areas': areas,
         'jobs': jobs,
         'chosen_area': area,
-        'categorys': categorys
     }
     return render(request, 'job/index.html', context)
 
-def job_detail(request, id):
-    job = Job.objects.get(pk=id)
+
+def job_detail(request, pk):
+    """
+    Job detail page.
+
+    Args:
+        request: HTTP request
+        pk (int): Job id
+
+    Returns:
+        HTML
+    """
+    job = Job.objects.get(pk=pk)
     context = {
-        'job': job
+        'job': job,
     }
     return render(request, 'job/job_detail.html', context)

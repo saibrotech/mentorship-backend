@@ -1,13 +1,20 @@
+"""Models for tech App."""
+
 # https://docs.djangoproject.com/en/4.0/topics/db/models/
 
-from unicodedata import category
 from django.db import models
 
 # Create your models here.
 
 
 class Language(models.Model):
-    lang_name = models.CharField(max_length=20)
-    lang_type = models.CharField(max_length=20)
-    origin_country = models.CharField(max_length=20)
+    """Programing language."""
+
+    size = 20
+    lang_name = models.CharField(max_length=size)
+    lang_type = models.CharField(max_length=size)
+    origin_country = models.CharField(max_length=size)
     origin_year = models.DateField()
+
+    def __str__(self):
+        return self.statement

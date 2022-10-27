@@ -1,3 +1,5 @@
-from django.shortcuts import render
+"""Views for mentored App."""
+
+# from django.shortcuts import render.
 
 # Create your views here.
