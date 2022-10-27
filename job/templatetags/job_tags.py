@@ -1,10 +1,12 @@
 """Tags used in template for job App."""
 
+import logging
 import types
 
 from django import template
 from django.utils.html import format_html
 
+logger = logging.getLogger(__name__)
 register = template.Library()
 
 ICON_DICT = types.MappingProxyType({
@@ -33,7 +35,13 @@ def area_icon(area_code, chosen_area):
         background = 'bg-primary'
     else:
         background = 'bg-secondary'
-    class_icon = ICON_DICT[area_code] if ICON_DICT[area_code] else 'bi-bug'
+
+    if area_code in ICON_DICT:
+        class_icon = ICON_DICT.get(area_code)
+    else:
+        logger.warning("The category {0} doesn't exist.".format(area_code))
+        class_icon = 'bi-bug'
+
     return format_html(
         '<i class="bi {0} icon {1} text-white rounded-circle"></i>',
         class_icon,
