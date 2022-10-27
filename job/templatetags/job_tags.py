@@ -22,11 +22,12 @@ def area_icon(area_code, chosen_area):
         background = 'bg-primary'
     else:
         background = 'bg-secondary'
+
     if area_code in ICON_DICT:
-        class_icon = ICON_DICT[area_code] if ICON_DICT[area_code] else 'bi-bug'
-        safe_text = f'<i class="bi {class_icon} icon {background} text-white rounded-circle"></i>'
-        return mark_safe(safe_text)
+        class_icon = ICON_DICT[area_code]
     else:
         print("The category " + area_code + " doesn't exist.");
-        safe_text = f'<i class="bi bi-bug icon {background} text-white rounded-circle"></i>'
-        return mark_safe(safe_text)
+        class_icon = "bi-bug"
+
+    safe_text = f'<i class="bi {class_icon} icon {background} text-white rounded-circle"></i>'
+    return mark_safe(safe_text)
