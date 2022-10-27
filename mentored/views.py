@@ -1,4 +1,4 @@
-""" ."""
+"""Views for mentored App."""
 
 # from django.shortcuts import render.
 

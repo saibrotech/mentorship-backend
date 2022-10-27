@@ -1,10 +1,10 @@
-""" ."""
+"""URL mapping for job App."""
 
 from django.urls import path
 
-from . import views
+from job import views
 
 urlpatterns = [
     path('', views.index),
-    path('<int:id>', views.job_detail),
+    path('<int:pk>', views.job_detail),
 ]

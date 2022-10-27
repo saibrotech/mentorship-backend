@@ -55,18 +55,25 @@ After create or edit a model:
 
 `python manage.py migrate` to apply to data base
 
+### Documentation
 
+The models, views and tags documentation can be found in:
+
+http://127.0.0.1:8000/admin/doc
 ### Run Pylinter
 
-Looks for "errors" in the code.
+Looks for "errors" in the code (see `setup.cfg`).
 
-> Example:  `flake8 --format=wemake --exclude .git,venv,migrations` This line of code will run the pylinter on all the python files inside the project excluding the .git venv and migration folders.
+> Example:  `flake8` This line of code will run the pylinter on all the python files inside the project excluding the .git venv and migration folders.
+
+To check violation documentation:
+https://flake8.codes/wemake-python-styleguide/0.15.3/index.html
 
 ### Run Auto-Formatter
 
 Tries to automatically fix some of the code "errors" that would show up on the pylinter.
 
-> Example:  `autopep8 --in-place --aggressive --aggressive --recursive --exclude ".git,venv,migrations" .`  This line of code will run the auto-formatter on all the python files inside the project folder except .git, venv and migrations.
+> Example:  `autopep8 --in-place --aggressive --recursive .`  This line of code will run the auto-formatter on all the python files inside the project folder except .git, venv and migrations.
 
 ### Figma Prototype
 

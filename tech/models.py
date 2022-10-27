@@ -1,4 +1,4 @@
-""" ."""
+"""Models for tech App."""
 
 # https://docs.djangoproject.com/en/4.0/topics/db/models/
 
@@ -8,7 +8,7 @@ from django.db import models
 
 
 class Language(models.Model):
-    """ ."""
+    """Programing language."""
 
     size = 20
     lang_name = models.CharField(max_length=size)
@@ -17,5 +17,4 @@ class Language(models.Model):
     origin_year = models.DateField()
 
     def __str__(self):
-        """ ."""
         return self.statement

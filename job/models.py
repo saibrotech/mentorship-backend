@@ -1,16 +1,10 @@
-""" ."""
-
-from unicodedata import category
+"""Model classes for job App."""
 
 from django.db import models
 
-# https://docs.djangoproject.com/en/4.0/topics/db/models/
-
-
-# Create your models here.
 
 class Category(models.Model):
-    """ ."""
+    """Job Category."""
 
     name_length = 50
     code_lenght = 3
@@ -23,18 +17,15 @@ class Category(models.Model):
     main_skills = models.CharField(max_length=main_length)
     pay_range = models.CharField(max_length=pay_range_length)
 
-    class Meta:
-        """ ."""
-
+    class Meta(object):
         verbose_name_plural = 'Categories'
 
     def __str__(self):
-        """ ."""
-        return f'{self.name} ({self.id})'
+        return '{0} ({1})'.format(self.name, self.id)
 
 
 class Company(models.Model):
-    """ ."""
+    """Company with jobs."""
 
     name_length = 50
     industry_length = 50
@@ -45,12 +36,11 @@ class Company(models.Model):
     founded_length = 4
     size_length = 2
 
-    """ Source: SEBRAE. Anuario do Trabalho na Micro e Pequena Empresa.
-    Sebrae: Brasília. p.17. 2013.
-    https://www.sebrae.com.br/Sebrae/Portal%20Sebrae/Anexos/Anuario
-    %20do%20Trabalho%20Na%20Micro%20e%20Pequena%20Empresa_2013.pdf """
-
-    COMPANY_SIZES = [
+    # Source: SEBRAE. Anuario do Trabalho na Micro e Pequena Empresa.
+    # Sebrae: Brasília. p.17. 2013.
+    # https://www.sebrae.com.br/Sebrae/Portal%20Sebrae/Anexos/Anuario
+    # %20do%20Trabalho%20Na%20Micro%20e%20Pequena%20Empresa_2013.pdf
+    company_sizes = [
         ('XS', 'Up to 10 employees'),
         ('S', '10 to 49 employees'),
         ('M', '50 to 99 employees'),
@@ -61,23 +51,20 @@ class Company(models.Model):
     overview = models.TextField()
     website = models.CharField(max_length=website_length)
     industry = models.CharField(max_length=industry_length)
-    size = models.CharField(max_length=size_length, choices=COMPANY_SIZES)
+    size = models.CharField(max_length=size_length, choices=company_sizes)
     headquarters = models.CharField(max_length=headquarters_length)
     founded = models.CharField(max_length=founded_length)
     specialties = models.TextField()
 
-    class Meta:
-        """ ."""
-
+    class Meta(object):
         verbose_name_plural = 'Companies'
 
     def __str__(self):
-        """ ."""
-        return f'{self.name} ({self.id})'
+        return '{0} ({1})'.format(self.name, self.id)
 
 
 class Job(models.Model):
-    """ ."""
+    """Job in IT."""
 
     title_length = 50
     experience_level_length = 6
@@ -85,13 +72,13 @@ class Job(models.Model):
     location_length = 50
     link_length = 200
 
-    XP_LEVELS = [
+    xp_levels = [
         ('INTERN', 'Internship'),
         ('ENTRY', 'Entry Level'),
         ('ASSOC', 'Associate'),
     ]
 
-    JOB_TYPES = [
+    job_types = [
         ('FULL', 'Full-time'),
         ('PART', 'Part-time'),
         ('CONTR', 'Contract'),
@@ -103,19 +90,17 @@ class Job(models.Model):
     date_posted = models.DateField()
     experience_level = models.CharField(
         max_length=experience_level_length,
-        choices=XP_LEVELS)
-    type = models.CharField(max_length=type_length, choices=JOB_TYPES)
+        choices=xp_levels,
+    )
+    type = models.CharField(max_length=type_length, choices=job_types)
     location = models.CharField(max_length=location_length)
     requirements = models.TextField()
     link = models.CharField(max_length=link_length)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
 
-    class Meta:
-        """ ."""
-
+    class Meta(object):
         verbose_name_plural = 'Jobs'
 
     def __str__(self):
-        """ ."""
-        return f'{self.name} ({self.id})'
+        return '{0} ({1})'.format(self.name, self.id)

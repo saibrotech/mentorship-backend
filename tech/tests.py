@@ -1,4 +1,4 @@
-""" ."""
+"""Tests for tech App."""
 
 # from django.test import TestCase.
 

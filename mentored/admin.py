@@ -1,4 +1,4 @@
-""" ."""
+"""Admin file of mentored App."""
 
 # from django.contrib import admin.
 

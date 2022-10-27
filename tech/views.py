@@ -1,4 +1,4 @@
-""" ."""
+"""Views for tech app."""
 
 # from django.shortcuts import render.
 

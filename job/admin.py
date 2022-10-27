@@ -1,45 +1,56 @@
-""" ."""
+"""Admin configuration for job App."""
 
 from django.contrib import admin
 
 # Register your models here.
 from job.models import Category, Company, Job
 
+FIELD_ID = 'id'
+FIELD_NAME = 'name'
+
 
 class CategoryAdmin(admin.ModelAdmin):
-    """ ."""
+    """Category admin configuration."""
 
-    list_display = ('id', 'name', 'main_stacks', 'main_skills', 'pay_range')
-    search_fields = ['id', 'name', 'main_stacks', 'main_skills']
+    list_display = (
+        FIELD_ID,
+        FIELD_NAME,
+        'main_stacks',
+        'main_skills',
+        'pay_range',
+    )
+    search_fields = (FIELD_ID, FIELD_NAME, 'main_stacks', 'main_skills')
 
 
 class CompanyAdmin(admin.ModelAdmin):
-    """ ."""
+    """Company admin configuration."""
 
     list_display = (
-        'id',
-        'name',
+        FIELD_ID,
+        FIELD_NAME,
         'overview',
         'website',
         'industry',
         'size',
         'headquarters',
         'founded',
-        'specialties')
+        'specialties',
+    )
     search_fields = [
-        'id',
-        'name',
+        FIELD_ID,
+        FIELD_NAME,
         'industry',
         'headquarters',
         'founded',
-        'specialties']
+        'specialties',
+    ]
 
 
 class JobAdmin(admin.ModelAdmin):
-    """ ."""
+    """Job admin configuration ."""
 
     list_display = (
-        'id',
+        FIELD_ID,
         'title',
         'type',
         'location',
@@ -47,8 +58,9 @@ class JobAdmin(admin.ModelAdmin):
         'link',
         'category_id',
         'company_id',
-        'date_posted')
-    search_fields = ['id', 'title', 'type', 'location', 'requirements']
+        'date_posted',
+    )
+    search_fields = [FIELD_ID, 'title', 'type', 'location', 'requirements']
     list_filter = ('category',)
 
 
