@@ -1,18 +1,18 @@
 <div class="container">
-  <form class="border border-dark rounded px-3 pt-3 mt-5">
+  <form class="border border-dark rounded px-3 pt-3 mb-5">
     <div class="form-group row align-items-center">
       <div class="col-12 col-md-3 pb-2">
         <label class="mb-0">Receba vagas por e-mail:</label>
-        <div class="clearfix"></div>
         <small>Categoria: "{{job.category.name}}"</small>
       </div>
       <div class="col-12 col-md-6 pt-2">
         <input
-          class="form-control form-control-lg border border-dark rounded"
-          type="email"
-          name="email"
-          placeholder="meu@email.com"
+        class="form-control form-control-lg border border-dark rounded"
+        type="email"
+        name="email"
+        placeholder="meu@email.com"
         />
+        <input type="hidden" name="area" value="{{job.category.code}}"/>
       </div>
       <div class="col-12 col-md-3 pt-2">
         <button
