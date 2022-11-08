@@ -1,27 +1,27 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    
-    <title>Login</title>
-</head>
-<body>
-    <div class="container">
-        <form class="form-group row border rounded align-items-center" id="form-newslet" action="#" method="post">
-            <div class="form-group col-5">
-                <h4 >Receba Vagas por e-mail:</h4>
-                <p>Categoria: "Desenvolvimento"</p>
-            </div>
-            <div class="form-group col-4">
-                <input type="email" name="email" id="iemail" placeholder="meu@email.com">
-            </div>
-            <div class="form-group col-3" id="botoes">
-                <input class="btn btn-primary" type="submit" value="Cadastrar">
-            </div>
-        </form>
+<div class="container">
+  <form class="border border-dark rounded px-3 pt-3 mt-5">
+    <div class="form-group row align-items-center">
+      <div class="col-12 col-md-3 pb-2">
+        <label class="mb-0">Receba vagas por e-mail:</label>
+        <div class="clearfix"></div>
+        <small>Categoria: "{{job.category.name}}"</small>
+      </div>
+      <div class="col-12 col-md-6 pt-2">
+        <input
+          class="form-control form-control-lg border border-dark rounded"
+          type="email"
+          name="email"
+          placeholder="meu@email.com"
+        />
+      </div>
+      <div class="col-12 col-md-3 pt-2">
+        <button
+          type="submit"
+          class="btn btn-block w-60 btn-lg btn-primary text-white font-weight-bold"
+        >
+          Cadastrar
+        </button>
+      </div>
     </div>
-</body>
-</html>
+  </form>
+</div>
