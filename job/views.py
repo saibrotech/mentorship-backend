@@ -1,4 +1,6 @@
-"""Views for job App."""
+"""
+Views for job App.
+"""
 
 from django.shortcuts import render
 
@@ -66,6 +68,7 @@ def job_newsletter(request):
     area = request.GET.get('area')
     context = {
         'email': email,
-        'area': area
+        'area': area,
     }
     return render(request, 'job/job_newsletter.html', context)
+
