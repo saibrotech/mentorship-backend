@@ -51,3 +51,21 @@ def job_detail(request, pk):
         'job': job,
     }
     return render(request, 'job/job_detail.html', context)
+
+def job_newsletter(request):
+    """
+    Job newsletter page.
+
+    Args:
+        request: HTTP request
+
+    Returns:
+        HTML
+    """
+    email = request.GET.get('email')
+    area = request.GET.get('area')
+    context = {
+        'email': email,
+        'area': area
+    }
+    return render(request, 'job/job_newsletter.html', context)
