@@ -4,6 +4,8 @@ from django.shortcuts import render
 
 from job.models import Category, Job
 
+PARAM_AREA = 'area'
+
 
 def index(request):
     """
@@ -21,8 +23,8 @@ def index(request):
     if 'search' in request.GET:
         search = request.GET.get('search')
         jobs = Job.objects.filter(title__icontains=search)
-    elif 'area' in request.GET:
-        area = request.GET.get('area')
+    elif PARAM_AREA in request.GET:
+        area = request.GET.get(PARAM_AREA)
         jobs = Job.objects.filter(category__code=area)
     else:
         jobs = Job.objects.all()
@@ -51,3 +53,24 @@ def job_detail(request, pk):
         'job': job,
     }
     return render(request, 'job/job_detail.html', context)
+
+
+def job_newsletter(request):
+    """
+    Job newsletter page.
+
+    Args:
+        request: HTTP request
+
+    Returns:
+        HTML
+    """
+    email = request.GET.get('email')
+    area = request.GET.get(PARAM_AREA)
+    areas = Category.objects.all()
+    context = {
+        'email': email,
+        PARAM_AREA: area,
+        'areas': areas,
+    }
+    return render(request, 'job/job_newsletter.html', context)
