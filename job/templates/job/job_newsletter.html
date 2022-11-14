@@ -24,11 +24,56 @@
 
 </head>
 <body>
-    <section class="h1 font-weight-bold mt-4">
-        <p>Receba novas vagas por e-mail</p>
-    </section>
     {% include './layout/header.html' %}
-
+    <div class="container">
+        <section class="h1 font-weight-bold pt-5 pt-md-4 pb-3">
+            <p>Receba novas vagas por e-mail</p>
+        </section>
+        <form class="form-group">
+            <div class="mb-4">
+                <label>Como gostaria de ser chamado</label>
+                <input type="text" placeholder="Nome completo" class="form-control">
+            </div>
+            <div class="mb-4">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" value="{{email}}" placeholder="meu@email.com" class="form-control">
+            </div>
+            <div class="mb-4">
+                <label>Áreas de interesse</label>
+                <div class="clearfix"></div>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <input type="checkbox" class="m-2">Segurança</input>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <input type="checkbox" class="m-2">Desenvolvimento</input>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <input type="checkbox" class="m-2">Produto</input>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <input type="checkbox" class="m-2">Suporte</input>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <input type="checkbox" class="m-2">Ciência de dados</input>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <input type="checkbox" class="m-2">Infraestrutura</input>
+                    </div>   
+                </div>
+            </div>
+            <div class="mb-5">
+                <label>Concordo</label>
+                <div class="clearfix"></div>
+                <input type="checkbox" class="m-2">Receber outras oportunidades em TI com as vagas</input>
+            </div>
+            <div class="row mb-5">
+                <div class="col-12 col-md-7 col-lg-5">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block"> Quero receber oportunidades</button>
+                </div>
+            </div> 
+        </form>
+    </div>
     {% include './layout/footer.html' %}
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
