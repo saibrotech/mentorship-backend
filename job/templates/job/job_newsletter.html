@@ -26,45 +26,30 @@
 <body>
     {% include './layout/header.html' %}
     <div class="container">
-        <section class="h1 font-weight-bold pt-5 pt-md-4 pb-3">
-            <p>Receba novas vagas por e-mail</p>
-        </section>
+        <h1 class="font-weight-bold pt-5 pt-md-4 pb-3">Receba novas vagas por e-mail</h1>
         <form class="form-group">
-            <div class="mb-4">
+            <div class="form-group">
                 <label>Como gostaria de ser chamado</label>
                 <input type="text" placeholder="Nome completo" class="form-control">
             </div>
-            <div class="mb-4">
+            <div class="form-group">
                 <label for="email">E-mail</label>
                 <input type="email" name="email" value="{{email}}" placeholder="meu@email.com" class="form-control">
             </div>
-            <div class="mb-4">
+            <div class="form-group">
                 <label>Áreas de interesse</label>
-                <div class="clearfix"></div>
                 <div class="row">
+                    {% for area in areas %}
                     <div class="col-12 col-md-6">
-                        <input type="checkbox" class="m-2">Segurança</input>
+                        <input type="checkbox" name="area" value="{{area.id}}" class="m-2">{{area.name}}</input>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <input type="checkbox" class="m-2">Desenvolvimento</input>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <input type="checkbox" class="m-2">Produto</input>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <input type="checkbox" class="m-2">Suporte</input>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <input type="checkbox" class="m-2">Ciência de dados</input>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <input type="checkbox" class="m-2">Infraestrutura</input>
-                    </div>   
+                    {% endfor %}   
                 </div>
             </div>
             <div class="mb-5">
-                <label>Concordo</label>
-                <div class="clearfix"></div>
+                <div>
+                    <label>Concordo</label>
+                </div>
                 <input type="checkbox" class="m-2">Receber outras oportunidades em TI com as vagas</input>
             </div>
             <div class="row mb-5">
