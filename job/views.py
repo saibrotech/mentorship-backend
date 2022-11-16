@@ -66,11 +66,11 @@ def job_newsletter(request):
         HTML
     """
     email = request.GET.get('email')
-    area = request.GET.get(PARAM_AREA)
+    area_code = request.GET.get(PARAM_AREA)
     areas = Category.objects.all()
     context = {
         'email': email,
-        PARAM_AREA: area,
+        'area_code': area_code,
         'areas': areas,
     }
     return render(request, 'job/job_newsletter.html', context)
