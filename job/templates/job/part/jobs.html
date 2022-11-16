@@ -7,7 +7,7 @@
         Nenhuma vaga encontrada.
     </div>
     {% endif %}
-    <ul class="list-group">
+    <ul class="list-group mb-4">
         {% for job in jobs %}
         <li class="list-group-item">
             <div class="d-flex flex-column flex-sm-row">
@@ -28,4 +28,7 @@
         </li>
         {% endfor %}
     </ul>
+    <div class="d-flex justify-content-center">
+        <button class="btn btn-secondary" onclick="loadMoreJobs()">Ver mais vagas...</button>
+    </div>
 </div>
