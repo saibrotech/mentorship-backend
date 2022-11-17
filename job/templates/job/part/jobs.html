@@ -7,28 +7,11 @@
         Nenhuma vaga encontrada.
     </div>
     {% endif %}
-    <ul class="list-group mb-4">
-        {% for job in jobs %}
-        <li class="list-group-item">
-            <div class="d-flex flex-column flex-sm-row">
-                <div class="flex-fill d-flex">
-                    <div class="align-self-center pr-3">
-                        {{ job.category.code  | area_icon:chosen_area }}
-                    </div>
-                    <div class="flex-fill pr-3">
-                        <p class="text-muted">{{job.company.name}}</p>
-                        <h6 class="font-weight-bold">{{job.title}}</h6>
-                        <small><i class="bi bi-geo-alt text-secondary pr-2"></i>{{job.location}}</small>                    
-                    </div>
-                </div>
-                <div class="d-flex align-items-center">
-                    <a class="btn btn-primary w-100" href="{{job.id}}">Detalhes</a>
-                </div>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
+    <div id="progressJobList" class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 100%"></div>
+    </div>
+    <ul id="jobList" class="list-group mb-4"></ul>
     <div class="d-flex justify-content-center">
-        <button class="btn btn-secondary" onclick="loadMoreJobs()">Ver mais vagas...</button>
+        <button id="loadMoreBtn" class="btn btn-secondary" onclick="loadMoreJobs()">Ver mais vagas...</button>
     </div>
 </div>
