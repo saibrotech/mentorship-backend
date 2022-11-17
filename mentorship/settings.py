@@ -10,22 +10,59 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import io
 import os
-import secrets
 from pathlib import Path
 from types import MappingProxyType
+
+import environ
+from django.core.exceptions import ImproperlyConfigured
+from google import auth
+from google.cloud import secretmanager
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env = environ.Env(DEBUG=(bool, False))
+env_file = os.path.join(BASE_DIR, '.env')
+
+# Attempt to load the Project ID into the environment, safely failing on error.
+try:
+    _, os.environ['GOOGLE_CLOUD_PROJECT'] = auth.default()
+except auth.exceptions.DefaultCredentialsError:
+    pass
+
+
+if os.path.isfile(env_file):
+    environ.Env.read_env(env_file)
+
+elif os.environ.get('GOOGLE_CLOUD_PROJECT', None):
+    # Pull secrets from Secret Manager
+    project_id = os.environ.get('GOOGLE_CLOUD_PROJECT')
+
+    client = secretmanager.SecretManagerServiceClient()
+    settings_name = os.environ.get(
+        'SETTINGS_NAME', 'mentorship-backend-django-settings',
+    )
+    name = 'projects/{0}/secrets/{1}/versions/latest'.format(
+        project_id, settings_name,
+    )
+    response = client.access_secret_version(name=name)
+    payload = response.payload.data.decode('UTF-8')
+
+    env.read_env(io.StringIO(payload))
+else:
+    raise ImproperlyConfigured(
+        'No local .env or GOOGLE_CLOUD_PROJECT detected. No secrets found.',
+    )
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY', default=secrets.token_urlsafe())
+SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 ALLOWED_HOSTS = ()
 # Application definition
 
@@ -79,17 +116,12 @@ WSGI_APPLICATION = 'mentorship.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-port = 5432
-DATABASES = MappingProxyType({
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', default='postgres'),
-        'USER': os.getenv('DB_USER', default='postgres'),
-        'PASSWORD': os.getenv('DB_PASSWORD', default='postgres'),
-        'HOST': os.getenv('DB_HOST', default='localhost'),
-        'PORT': os.getenv('DB_PORT', default=port),
-    },
-})
+DATABASES = MappingProxyType({'default': env.db()})
+
+# If the flag as been set, configure to use proxy
+if os.getenv('USE_CLOUD_SQL_AUTH_PROXY', None):
+    DATABASES['default']['HOST'] = '127.0.0.1'
+    DATABASES['default']['PORT'] = 5432
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

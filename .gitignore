@@ -44,3 +44,6 @@ venv/
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+# GCloud
+.env
