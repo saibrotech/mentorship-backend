@@ -14,6 +14,7 @@ import io
 import os
 from pathlib import Path
 from types import MappingProxyType
+from urllib.parse import urlparse
 
 import environ
 from django.core.exceptions import ImproperlyConfigured
@@ -63,7 +64,22 @@ else:
 SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
-ALLOWED_HOSTS = ()
+
+# [START cloudrun_django_csrf]
+# SECURITY WARNING: It's recommended that you use this when
+# running in production. The URL will be known once you first deploy
+# to Cloud Run.
+# This code takes the URL and converts it to both these settings formats.
+CLOUDRUN_SERVICE_URL = env('CLOUDRUN_SERVICE_URL', default=None)
+if CLOUDRUN_SERVICE_URL:
+    ALLOWED_HOSTS = [urlparse(CLOUDRUN_SERVICE_URL).netloc]
+    CSRF_TRUSTED_ORIGINS = (CLOUDRUN_SERVICE_URL)
+    SECURE_SSL_REDIRECT = True
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+else:
+    ALLOWED_HOSTS = ['*']
+
+# [END cloudrun_django_csrf]
 # Application definition
 
 INSTALLED_APPS = (
