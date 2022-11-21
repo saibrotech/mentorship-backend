@@ -83,7 +83,10 @@ $theme-colors: map-merge(
     "warning":    $warning,
     "danger":     $danger,
     "light":      $light,
-    "dark":       $dark
+    "dark":       $dark,
+    // Additional colors
+    "body":       $gray-900,
+    "white-40":   rgba($white, .4),
   ),
   $theme-colors
 );
