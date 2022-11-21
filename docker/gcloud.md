@@ -6,13 +6,21 @@ Project ID: **mentorship-368321**
 
 **us-central1**
 
+## Shell
+
+[Open Shell](https://console.cloud.google.com/welcome?project=mentorship-368321&cloudshell=true)
+
 ## Secret Manager
 
-[Secrets](https://console.cloud.google.com/security/secret-manager?project=mentorship-368321)
+[mentorship-backend-django-settings"](https://console.cloud.google.com/security/secret-manager/secret/mentorship-backend-django-settings/versions?project=mentorship-368321)
 
 ## Database
 
 [mentorship-db](https://console.cloud.google.com/sql/instances/mentorship-db/overview?project=mentorship-368321)
+
+## Connect to Data Base
+
+`gcloud sql connect mentorship-instance --user=mentorship`
 
 ### SQL proxy
 
@@ -22,7 +30,7 @@ Download the Cloud SQL Auth proxy:
 
 Run Proxy:
 
-`./cloud_sql_proxy -instances="mentorship-368321:us-central1:mentorship-db"=tcp:5432`
+`./cloud_sql_proxy -instances="mentorship-368321:us-central1:mentorship-instance"=tcp:5432`
 
 Set project ot use proxy
 `export USE_CLOUD_SQL_AUTH_PROXY=true`
