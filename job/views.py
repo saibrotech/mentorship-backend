@@ -74,3 +74,16 @@ def job_newsletter(request):
         'areas': areas,
     }
     return render(request, 'job/job_newsletter.html', context)
+
+
+def job_new(request):
+    """
+    New job page.
+
+    Args:
+        request: HTTP request
+
+    Returns:
+        HTML
+    """
+    return render(request, 'job/new-jobs-criteria.html')
