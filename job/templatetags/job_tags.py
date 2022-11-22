@@ -34,7 +34,7 @@ def area_icon(area_code, chosen_area):
     if area_code == chosen_area:
         background = 'bg-secondary'
     else:
-        background = 'bg-body'
+        background = ''
 
     if area_code in ICON_DICT:
         class_icon = ICON_DICT.get(area_code)
@@ -44,7 +44,7 @@ def area_icon(area_code, chosen_area):
 
     i_tag = """
     <i class="bi {0} icon {1} text-white rounded-circle
-    border border-white-40"></i>
+    border"></i>
     """
 
     return format_html(

@@ -13,6 +13,15 @@ body {
     width: 64px;
     text-align: center;
     padding-top: 13px;
+    background-color: #212529;
+}
+
+.icon:hover {
+    filter: brightness(1.5);
+}
+
+.icon.bg-secondary:hover {
+    filter: brightness(0.75);
 }
 
 .highlights-image {
