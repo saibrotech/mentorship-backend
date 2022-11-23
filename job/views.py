@@ -78,7 +78,7 @@ def job_newsletter(request):
 
 def job_new(request):
     """
-    New job page.
+    Return new job page.
 
     Args:
         request: HTTP request
