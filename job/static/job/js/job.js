@@ -1,4 +1,16 @@
-let currentApiUrl = '/api/public/jobs/'
+let currentApiUrl = createCurrentApiUrl()
+
+function createCurrentApiUrl() {
+    let url = '/api/public/jobs/'
+    const params = new URLSearchParams(document.location.search)
+
+    if (params.has('search')) {
+        url += `?search=${params.get('search')}`
+    } else if (params.has('area')) {
+        url += `?area=${params.get('area')}`
+    }
+    return url;
+}
 
 function loadMoreJobs() {
     fetch(currentApiUrl)
@@ -12,12 +24,21 @@ function loadMoreJobs() {
         .then((data) => {
             removeProgressBar()
             createItems(data.results)
-            currentApiUrl = data.next
+            preparLoadMoreJobs(data.next)
         });
 }
 
 function createItems(jobs) {
     const ul = document.getElementById('jobList')
+
+    if (jobs.length == 0) {
+        const div = document.createElement('div')
+        div.className = 'alert alert-info'
+        div.textContent = 'Nenhuma vaga encontrada.'
+
+        ul.parentNode.insertBefore(div, ul)
+        return
+    }
        
     jobs.forEach(job => {
         const li = createItem(job)
@@ -56,6 +77,15 @@ function removeProgressBar() {
 
     if (element) {
         element.remove()
+    }
+}
+
+function preparLoadMoreJobs(nextUrl) {
+    if (nextUrl) {
+        currentApiUrl = nextUrl
+    } else {
+        const btn = document.getElementById('loadMoreBtn')
+        btn.setAttribute('disabled', true)
     }
 }
 

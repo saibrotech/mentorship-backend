@@ -20,18 +20,11 @@ def index(request):
     area = ''
     areas = Category.objects.all()
 
-    if 'search' in request.GET:
-        search = request.GET.get('search')
-        jobs = Job.objects.filter(title__icontains=search)
-    elif PARAM_AREA in request.GET:
+    if PARAM_AREA in request.GET:
         area = request.GET.get(PARAM_AREA)
-        jobs = Job.objects.filter(category__code=area)
-    else:
-        jobs = Job.objects.all()
 
     context = {
         'areas': areas,
-        'jobs': jobs,
         'chosen_area': area,
     }
     return render(request, 'job/index.html', context)
