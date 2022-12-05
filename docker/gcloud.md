@@ -4,7 +4,7 @@ Project ID: **mentorship-368321**
 
 ## Region
 
-**us-central1**
+**southamerica-east1**
 
 ## Shell
 
@@ -16,24 +16,11 @@ Project ID: **mentorship-368321**
 
 ## Database
 
-[mentorship-db](https://console.cloud.google.com/sql/instances/mentorship-db/overview?project=mentorship-368321)
+[postgres-vm-1](https://console.cloud.google.com/compute/instancesDetail/zones/southamerica-east1-b/instances/postgres-vm-1?project=mentorship-368321)
 
 ## Connect to Data Base
 
-`gcloud sql connect mentorship-instance --user=mentorship`
-
-### SQL proxy
-
-Download the Cloud SQL Auth proxy:
-
-`wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy`
-
-Run Proxy:
-
-`./cloud_sql_proxy -instances="mentorship-368321:us-central1:mentorship-instance"=tcp:5432`
-
-Set project ot use proxy
-`export USE_CLOUD_SQL_AUTH_PROXY=true`
+`jdbc:postgresql://35.247.198.101:5432/mentorship`
 
 ## Logs
 
@@ -41,4 +28,6 @@ Set project ot use proxy
 
 ## Manual deploy
 
-`gcloud run deploy`
+`gcloud builds submit --config cloudmigrate.yaml --substitutions _INSTANCE_NAME=INSTANCE_NAME,_REGION=REGION`
+
+`gcloud run deploy mentorship-backend --region southamerica-east1 --source .`
