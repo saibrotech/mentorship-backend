@@ -1,5 +1,14 @@
 let currentApiUrl = createCurrentApiUrl()
 
+const AREA_ICON = {
+    'DEV': 'bi-code-slash',
+    'SUP': 'bi-headset',
+    'INF': 'bi-server',
+    'CIE': 'bi-pie-chart',
+    'SEG': 'bi-shield-shaded',
+    'PRO': 'bi-box-seam'
+}
+
 function createCurrentApiUrl() {
     let url = '/api/public/jobs/'
     const params = new URLSearchParams(document.location.search)
@@ -58,7 +67,7 @@ function createItemHtml(job) {
     <div class="d-flex flex-column flex-sm-row"> \
         <div class="flex-fill d-flex"> \
             <div class="align-self-center pr-3"> \
-                <i class="bi bi-pie-chart icon bg-secondary text-white rounded-circle"></i> \
+                <i class="bi ${AREA_ICON[job.category.code]} icon bg-secondary text-white rounded-circle"></i> \
             </div> \
             <div class="flex-fill pr-3"> \
                 <p class="text-muted">${job.company.name}</p> \
