@@ -20,6 +20,12 @@ class PublicJobViewSet(
     serializer_class = JobSerializer
 
     def get_queryset(self):
+        """
+        Return the jobs according to search term or by area.
+
+        Returns:
+            A job list
+        """
         request = self.request
 
         if PARAM_SEARCH in request.GET:
