@@ -16,7 +16,7 @@ body {
 }
 
 .highlights-image {
-    background: url('/static/job/img/junior.png') no-repeat;
+    background: url('../img/junior.png') no-repeat;
     background-size: contain;
     background-position: bottom;
 }

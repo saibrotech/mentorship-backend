@@ -27,35 +27,35 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env(DEBUG=(bool, False))
 env_file = os.path.join(BASE_DIR, '.env')
 
-# Attempt to load the Project ID into the environment, safely failing on error.
-try:
-    _, os.environ['GOOGLE_CLOUD_PROJECT'] = auth.default()
-except auth.exceptions.DefaultCredentialsError:
-    pass
-
-
 if os.path.isfile(env_file):
     environ.Env.read_env(env_file)
-
-elif os.environ.get('GOOGLE_CLOUD_PROJECT', None):
-    # Pull secrets from Secret Manager
-    project_id = os.environ.get('GOOGLE_CLOUD_PROJECT')
-
-    client = secretmanager.SecretManagerServiceClient()
-    settings_name = os.environ.get(
-        'SETTINGS_NAME', 'mentorship-backend-django-settings',
-    )
-    name = 'projects/{0}/secrets/{1}/versions/latest'.format(
-        project_id, settings_name,
-    )
-    response = client.access_secret_version(name=name)
-    payload = response.payload.data.decode('UTF-8')
-
-    env.read_env(io.StringIO(payload))
 else:
-    raise ImproperlyConfigured(
-        'No local .env or GOOGLE_CLOUD_PROJECT detected. No secrets found.',
-    )
+    # Attempt to load the Project ID into the environment,
+    # safely failing on error.
+    try:
+        _, os.environ['GOOGLE_CLOUD_PROJECT'] = auth.default()
+    except auth.exceptions.DefaultCredentialsError:
+        pass
+
+    if os.environ.get('GOOGLE_CLOUD_PROJECT', None):
+        # Pull secrets from Secret Manager
+        project_id = os.environ.get('GOOGLE_CLOUD_PROJECT')
+
+        client = secretmanager.SecretManagerServiceClient()
+        settings_name = os.environ.get(
+            'SETTINGS_NAME', 'mentorship-backend-django-settings',
+        )
+        name = 'projects/{0}/secrets/{1}/versions/latest'.format(
+            project_id, settings_name,
+        )
+        response = client.access_secret_version(name=name)
+        payload = response.payload.data.decode('UTF-8')
+
+        env.read_env(io.StringIO(payload))
+    else:
+        raise ImproperlyConfigured(
+            'No local .env or GOOGLE_CLOUD_PROJECT detected. No secrets found.',
+        )
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -96,7 +96,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rest_framework',
     'django_filters',
-    'compressor',
 )
 
 MIDDLEWARE = (
@@ -133,11 +132,6 @@ WSGI_APPLICATION = 'mentorship.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 DATABASES = MappingProxyType({'default': env.db()})
-
-# If the flag as been set, configure to use proxy
-if os.getenv('USE_CLOUD_SQL_AUTH_PROXY', None):
-    DATABASES['default']['HOST'] = '127.0.0.1'
-    DATABASES['default']['PORT'] = 5432
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -186,30 +180,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 GS_BUCKET_NAME = env('GS_BUCKET_NAME', default=None)
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 if GS_BUCKET_NAME:
-    # [START cloudrun_django_static_config]
-    # Define static storage via django-storages[google]
-    STATIC_URL = '/static/'
-    DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-    STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-    GS_DEFAULT_ACL = 'publicRead'
-    # [END cloudrun_django_static_config]
+    STATIC_URL = 'https://storage.googleapis.com/{0}/'.format(GS_BUCKET_NAME)
 else:
-    STATIC_URL = 'static/'
+    STATIC_URL = '/static/'
 
     STATICFILES_FINDERS = (
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-        'compressor.finders.CompressorFinder',
     )
 
-    COMPRESS_PRECOMPILERS = (
-        ('text/x-scss', 'django_libsass.SassCompiler'),
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'staticfiles'),
     )
 
 # Default primary key field type

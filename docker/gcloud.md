@@ -26,8 +26,27 @@ Project ID: **mentorship-368321**
 
 [Logs Explorer](https://console.cloud.google.com/logs/query;project=mentorship-368321?project=mentorship-368321)
 
+## Run as production
+
+`gcloud auth login`
+`gcloud config get-value project`
+
+
+Or create a `.env` file with the secrets as production:
+
+```
+DATABASE_URL=postgres://mentorship-app:<password>@35.247.198.101:5432/mentorship
+SECRET_KEY=<random secrect>
+GS_BUCKET_NAME=mentorship-backend-statics
+DEBUG=True
+```
+
 ## Manual deploy
 
-`gcloud builds submit --config cloudmigrate.yaml --substitutions _INSTANCE_NAME=INSTANCE_NAME,_REGION=REGION`
-
 `gcloud run deploy mentorship-backend --region southamerica-east1 --source .`
+
+### Update static files
+
+`python manage.py collectstatic`
+`gcloud storage cp static/* gs://mentorship-backend-statics/ --recursive`
+`gcloud storage cp staticfiles/* gs://mentorship-backend-statics/ --recursive`
