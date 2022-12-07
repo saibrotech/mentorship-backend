@@ -2,6 +2,10 @@
 
 ## DEV
 
+### Configurations
+
+Copy the file `.env.sample` to `.env`.
+Edit this file if necessary.
 ### Docker
 
 No terminal:
