@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import io
+import logging
 import os
+import secrets
 from pathlib import Path
 from types import MappingProxyType
 from urllib.parse import urlparse
@@ -20,6 +22,8 @@ import environ
 from django.core.exceptions import ImproperlyConfigured
 from google import auth
 from google.cloud import secretmanager
+
+logger = logging.getLogger(__name__)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,10 +36,11 @@ if os.path.isfile(env_file):
 else:
     # Attempt to load the Project ID into the environment,
     # safely failing on error.
-    try:
-        _, os.environ['GOOGLE_CLOUD_PROJECT'] = auth.default()
+    try:  # noqa: WPS229
+        credentials, project_id = auth.default()
+        os.environ['GOOGLE_CLOUD_PROJECT'] = project_id
     except auth.exceptions.DefaultCredentialsError:
-        pass
+        logger.debug('Running without Gcloud')
 
     if os.environ.get('GOOGLE_CLOUD_PROJECT', None):
         # Pull secrets from Secret Manager
@@ -54,14 +59,17 @@ else:
         env.read_env(io.StringIO(payload))
     else:
         raise ImproperlyConfigured(
-            'No local .env or GOOGLE_CLOUD_PROJECT detected. No secrets found.',
+            (
+                'No local .env or GOOGLE_CLOUD_PROJECT detected.' +
+                'No secrets found.'
+            ),
         )
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY', default=secrets.token_urlsafe())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
@@ -72,12 +80,12 @@ DEBUG = env('DEBUG')
 # This code takes the URL and converts it to both these settings formats.
 CLOUDRUN_SERVICE_URL = env('CLOUDRUN_SERVICE_URL', default=None)
 if CLOUDRUN_SERVICE_URL:
-    ALLOWED_HOSTS = [urlparse(CLOUDRUN_SERVICE_URL).netloc]
+    ALLOWED_HOSTS = (urlparse(CLOUDRUN_SERVICE_URL).netloc,)
     CSRF_TRUSTED_ORIGINS = (CLOUDRUN_SERVICE_URL)
     SECURE_SSL_REDIRECT = True
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 else:
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ('*',)
 
 # [END cloudrun_django_csrf]
 # Application definition
