@@ -14,6 +14,7 @@ import io
 import logging
 import os
 import secrets
+import sys
 from pathlib import Path
 from types import MappingProxyType
 from urllib.parse import urlparse
@@ -27,9 +28,14 @@ logger = logging.getLogger(__name__)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEST = 'test' in sys.argv
 
 env = environ.Env(DEBUG=(bool, False))
-env_file = os.path.join(BASE_DIR, '.env')
+
+if TEST:
+    env_file = os.path.join(BASE_DIR, '.env.test')
+else:
+    env_file = os.path.join(BASE_DIR, '.env')
 
 if os.path.isfile(env_file):
     environ.Env.read_env(env_file)
