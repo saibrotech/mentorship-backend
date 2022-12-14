@@ -2,30 +2,11 @@
 {% load job_tags %}
 <div class="container mb-5">
     <h2 class="font-weight-bold text-center p-4">Vagas mais recentes</h2>
-    {% if not jobs %}
-    <div class="alert alert-info" role="alert">
-        Nenhuma vaga encontrada.
+    <div id="progressJobList" class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 100%"></div>
     </div>
-    {% endif %}
-    <ul class="list-group">
-        {% for job in jobs %}
-        <li class="list-group-item">
-            <div class="d-flex flex-column flex-sm-row">
-                <div class="flex-fill d-flex">
-                    <div class="align-self-center pr-3">
-                        {{ job.category.code  | area_icon:chosen_area }}
-                    </div>
-                    <div class="flex-fill pr-3">
-                        <p class="text-muted">{{job.company.name}}</p>
-                        <h6 class="font-weight-bold">{{job.title}}</h6>
-                        <small><i class="bi bi-geo-alt text-secondary pr-2"></i>{{job.location}}</small>                    
-                    </div>
-                </div>
-                <div class="d-flex align-items-center mt-2 mt-sm-0">
-                    <a class="btn btn-primary w-100" href="{{job.id}}">Detalhes</a>
-                </div>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
+    <ul id="jobList" class="list-group mb-4"></ul>
+    <div class="d-flex justify-content-center">
+        <button id="loadMoreBtn" class="btn btn-secondary" onclick="loadMoreJobs()">Ver mais vagas...</button>
+    </div>
 </div>

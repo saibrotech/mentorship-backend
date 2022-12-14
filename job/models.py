@@ -103,4 +103,4 @@ class Job(models.Model):
         verbose_name_plural = 'Jobs'
 
     def __str__(self):
-        return '{0} ({1})'.format(self.name, self.id)
+        return '{0} ({1})'.format(self.title, self.id)
