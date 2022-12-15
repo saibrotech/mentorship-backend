@@ -20,18 +20,11 @@ def index(request):
     area = ''
     areas = Category.objects.all()
 
-    if 'search' in request.GET:
-        search = request.GET.get('search')
-        jobs = Job.objects.filter(title__icontains=search)
-    elif PARAM_AREA in request.GET:
+    if PARAM_AREA in request.GET:
         area = request.GET.get(PARAM_AREA)
-        jobs = Job.objects.filter(category__code=area)
-    else:
-        jobs = Job.objects.all()
 
     context = {
         'areas': areas,
-        'jobs': jobs,
         'chosen_area': area,
     }
     return render(request, 'job/index.html', context)
@@ -66,11 +59,24 @@ def job_newsletter(request):
         HTML
     """
     email = request.GET.get('email')
-    area = request.GET.get(PARAM_AREA)
+    area_code = request.GET.get(PARAM_AREA)
     areas = Category.objects.all()
     context = {
         'email': email,
-        PARAM_AREA: area,
+        'area_code': area_code,
         'areas': areas,
     }
     return render(request, 'job/job_newsletter.html', context)
+
+
+def job_new(request):
+    """
+    Return new job page.
+
+    Args:
+        request: HTTP request
+
+    Returns:
+        HTML
+    """
+    return render(request, 'job/new-jobs-criteria.html')

@@ -32,9 +32,9 @@ def area_icon(area_code, chosen_area):
         HTML for area icon
     """
     if area_code == chosen_area:
-        background = 'bg-primary'
-    else:
         background = 'bg-secondary'
+    else:
+        background = ''
 
     if area_code in ICON_DICT:
         class_icon = ICON_DICT.get(area_code)
@@ -42,8 +42,13 @@ def area_icon(area_code, chosen_area):
         logger.warning("The category {0} doesn't exist.".format(area_code))
         class_icon = 'bi-bug'
 
+    i_tag = """
+    <i class="bi {0} icon {1} text-white rounded-circle
+    border"></i>
+    """
+
     return format_html(
-        '<i class="bi {0} icon {1} text-white rounded-circle"></i>',
+        i_tag,
         class_icon,
         background,
     )

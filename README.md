@@ -8,11 +8,11 @@ Copy the file `.env.sample` to `.env`.
 Edit this file if necessary.
 ### Docker
 
-No terminal:
+Para subir o banco de dados no terminal:
 
 `cd docker/dev`
 
-`docker compose up`
+`docker-compose up`
 
 This will run only once in the PostgreSQL database
 

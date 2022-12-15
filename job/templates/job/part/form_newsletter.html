@@ -1,5 +1,5 @@
 <div class="container">
-  <form action="newsletter" class="border border-dark rounded px-3 pt-3 mt-5">
+  <form action="newsletter" class="border border-dark rounded px-3 pt-3 mb-5">
     <div class="form-group row align-items-center">
       <div class="col-12 col-md-3 pb-2">
         <label class="mb-0">Receba vagas por e-mail:</label>
@@ -12,6 +12,12 @@
           type="email"
           name="email"
           placeholder="meu@email.com"
+          required
+        />
+        <input
+          type="hidden"
+          name="area"
+          value="{{job.category.code}}"
         />
       </div>
       <div class="col-12 col-md-3 pt-2">
