@@ -6,6 +6,14 @@ body {
     background-color: #E3E3E3;
 }
 
+a.icon-link:hover {
+    text-decoration: none;
+}
+
+a.icon-link:hover .icon {
+    background-color: #0086FF;
+}
+
 .icon {
     display: inline-block;
     font-size: 1.5em; 
@@ -13,6 +21,7 @@ body {
     width: 64px;
     text-align: center;
     padding-top: 13px;
+    background-color: #212529;
 }
 
 .highlights-image {

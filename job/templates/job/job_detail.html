@@ -25,25 +25,26 @@
 </head>
 <body>
     {% include './layout/header.html' %}
-    <main class="container px-4 py-5">
-        <section class="mb-4">
-            <h2 class="text-center">{{job.title}}</h2>
-            <h5 class="font-italic text-center">{{job.company.name}}</h5>
+
+    <main class="container">
+        <section class="mb-4 p-4 bg-dark">
+            <h1 class="text-center text-white">{{job.title}}</h1>
+            <h2 class="text-center text-white">{{job.company.name}}</h2>
             <nav class="mt-4 text-center">
                 <a class="btn btn-secondary m-2" href="{{job.company.website}}" target="_blank" role="button">Ver empresa</a>
                 <a class="btn btn-primary m-2" href="{{job.link}}" target="_blank" role="button">Candidate-se</a>
             </nav>
-            <ul class="mt-4 row list-unstyled">
-                <div class="col col-12 col-md-6">
-                    <li><strong>Local:</strong> {{job.location}}</li>
-                    <li><strong>Data de Publicação:</strong> {{job.date_posted}}</li>
-                </div> 
-                <div class="col col-12 col-md-6">
-                    <li><strong>Nível Escolar:</strong></li>
-                    <li><strong>Inglês Mínimo:</strong></li>
-                </div> 
-            </ul>
         </section>
+        <ul class="row list-unstyled">
+            <div class="col col-12 col-md-6">
+                <li><strong>Local:</strong> {{job.location}}</li>
+                <li><strong>Data de Publicação:</strong> {{job.date_posted}}</li>
+            </div> 
+            <div class="col col-12 col-md-6">
+                <li><strong>Nível Escolar:</strong></li>
+                <li><strong>Inglês Mínimo:</strong></li>
+            </div> 
+        </ul>
         <section>
             <h3>Descrição</h3>
             <p>{{job.requirements | linebreaks}}</p>

@@ -67,7 +67,7 @@ function createItemHtml(job) {
     <div class="d-flex flex-column flex-sm-row"> \
         <div class="flex-fill d-flex"> \
             <div class="align-self-center pr-3"> \
-                <i class="bi ${AREA_ICON[job.category.code]} icon bg-secondary text-white rounded-circle"></i> \
+                <i class="bi ${AREA_ICON[job.category.code]} icon bg-secondary text-white rounded-circle border"></i> \
             </div> \
             <div class="flex-fill pr-3"> \
                 <p class="text-muted">${job.company.name}</p> \
@@ -75,7 +75,7 @@ function createItemHtml(job) {
                 <small><i class="bi bi-geo-alt text-secondary pr-2"></i>${job.location}</small> \
             </div> \
         </div> \
-        <div class="d-flex align-items-center"> \
+        <div class="d-flex align-items-center mt-2 mt-sm-0"> \
             <a class="btn btn-primary w-100" href="${job.id}">Detalhes</a> \
         </div> \
     </div>`;

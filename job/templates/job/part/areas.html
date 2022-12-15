@@ -1,26 +1,20 @@
 {% load job_tags %}
-<div class="bg-gray mb-4 pt-5 pb-5">
-    <h2 class="text-center font-weight-bold">
+<div class="container bg-dark mb-4 pt-5 pb-5">
+    <h2 class="text-center text-white">
         Áreas da TI
     </h2>
-    <div class="container">
-        <div class="row justify-content-center">
-            {% for area in areas %}
-            <div class="col col-12 col-sm-4 col-md-4 col-lg-2">
-                <a href="?area={{area.code}}">
-                    <div class="d-flex justify-content-center mt-4">
-                        {{area.code | area_icon:chosen_area}}
-                    </div>
-                    <div class="d-flex justify-content-center p-2">
-                        {%if chosen_area == area.code%}
-                        <span class="text-primary">{{area.name}}</span>
-                        {%else%}
-                        <span class="text-secondary">{{area.name}}</span>
-                        {%endif%}
-                    </div>
-                </a>
-            </div>
-            {% endfor %}
+    <div class="row justify-content-center">
+        {% for area in areas %}
+        <div class="col col-6 col-sm-4 col-md-4 col-lg-2">
+            <a class="icon-link" href="?area={{area.code}}">
+                <div class="d-flex justify-content-center mt-4">
+                    {{area.code | area_icon:chosen_area}}
+                </div>
+                <div class="d-flex justify-content-center pt-2">
+                    <span class="text-white">{{area.name}}</span>
+                </div>
+            </a>
         </div>
+        {% endfor %}
     </div>
 </div>
