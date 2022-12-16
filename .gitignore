@@ -7,6 +7,7 @@ db.sqlite3
 .xdp_db.*
 media
 CACHE
+/static/
 
 # Backup files # 
 *.bak 
@@ -44,3 +45,6 @@ venv/
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+# GCloud
+.env
