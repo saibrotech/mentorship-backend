@@ -43,10 +43,9 @@ DEBUG=True
 
 ## Manual deploy
 
-`gcloud run deploy mentorship-backend --region southamerica-east1 --source .`
+`gcloud run deploy mentorship-backend --region us-central1 --source .`
 
 ### Update static files
 
 `python manage.py collectstatic`
 `gcloud storage cp static/* gs://mentorship-backend-statics/ --recursive`
-`gcloud storage cp staticfiles/* gs://mentorship-backend-statics/ --recursive`

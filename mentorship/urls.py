@@ -17,11 +17,27 @@ Including another URLconf
 2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.shortcuts import redirect
 from django.urls import include, path
+
+
+def redirect_to_job(request):
+    """
+    Redirect to job page.
+
+    Args:
+        request: HTTP request
+
+    Returns:
+        A HTTP response to redirect
+    """
+    return redirect('/job/')
+
 
 urlpatterns = [
     path('admin/doc/', include('django.contrib.admindocs.urls')),
     path('admin/', admin.site.urls),
     path('job/', include('job.urls')),
     path('api/', include('api.urls')),
+    path('', redirect_to_job),
 ]
