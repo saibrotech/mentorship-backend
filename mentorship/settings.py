@@ -63,6 +63,9 @@ else:
         payload = response.payload.data.decode('UTF-8')
 
         env.read_env(io.StringIO(payload))
+
+        SECURE_SSL_REDIRECT = True
+        SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     else:
         raise ImproperlyConfigured(
             (
