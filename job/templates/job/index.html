@@ -4,6 +4,10 @@
     {% include './part/highlights.html' %}
     {% include './part/areas.html' %}
     {% include './part/jobs.html' %}
+
+    {% if area %}
+        {% include './part/form_newsletter.html' %}
+    {% endif %}
+
+    {% include './layout/footer.html' %}
 {% endblock %}
-
-
