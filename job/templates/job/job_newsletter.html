@@ -1,26 +1,6 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receba Oportunidades</title>
+{% extends 'job/layout/base.html' %}
 
-    <link rel="icon" href="/static/job/img/favicon.ico" type="image/x-icon">
-
-    <link type="text/css" href="{% static 'css/theme.css' %}" rel="stylesheet" media="screen">
-
-    <link rel="stylesheet" href="{% static 'job/css/styles.css' %}">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-
-</head>
-<body>
-    {% include './layout/header.html' %}
+{% block content %}
     <div class="container">
         <h1 class="font-weight-bold pt-5 pt-md-4 pb-3">Receba novas vagas por e-mail</h1>
         <form>
@@ -55,13 +35,6 @@
             </div> 
         </form>
     </div>
-    {% include './layout/footer.html' %}
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
     <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/77babb72-ba3c-4a5c-9155-642c659bd8da-loader.js" ></script>
-</body>
-</html>
+{% endblock %}
