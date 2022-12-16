@@ -3,37 +3,45 @@
 {% block content %}
     <div class="container">
         <h1 class="font-weight-bold pt-5 pt-md-4 pb-3">Receba novas vagas por e-mail</h1>
-        <form>
-            <div class="form-group">
-                <label>Seu nome</label>
-                <input type="text" name="name" placeholder="Nome completo" class="form-control" required>
+
+        {% if submited %}
+            <div class="alert alert-info mb-5">
+                <h4 class="alert-heading">Obrigado por se inscrever!</h4>
+                Logo começará a receber novas vagas.
             </div>
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" name="email" value="{{email}}" placeholder="meu@email.com" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label>Áreas de interesse</label>
-                <div class="row">
-                    {% for area in areas %}
-                    <div class="col-12 col-md-6">
-                        <input type="checkbox" name="area" value="{{area.code}}" {% if area_code == area.code %} checked="cheched" {% endif %} class="m-2">{{area.name}}</input>
+        {% else %}
+            <form>
+                <div class="form-group">
+                    <label>Seu nome</label>
+                    <input type="text" name="name" placeholder="Nome completo" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" value="{{email}}" placeholder="meu@email.com" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Áreas de interesse</label>
+                    <div class="row">
+                        {% for area in areas %}
+                        <div class="col-12 col-md-6">
+                            <input type="checkbox" name="area" value="{{area.code}}" {% if area_code == area.code %} checked="cheched" {% endif %} class="m-2">{{area.name}}</input>
+                        </div>
+                        {% endfor %}   
                     </div>
-                    {% endfor %}   
                 </div>
-            </div>
-            <div class="mb-5">
-                <div>
-                    <label>Concordo</label>
+                <div class="mb-5">
+                    <div>
+                        <label>Concordo</label>
+                    </div>
+                    <input type="checkbox" class="m-2" required>Receber outras oportunidades em TI com as vagas</input>
                 </div>
-                <input type="checkbox" class="m-2" required>Receber outras oportunidades em TI com as vagas</input>
-            </div>
-            <div class="row mb-5">
-                <div class="col-12 col-md-7 col-lg-5">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block"> Quero receber oportunidades</button>
-                </div>
-            </div> 
-        </form>
+                <div class="row mb-5">
+                    <div class="col-12 col-md-7 col-lg-5">
+                        <button type="submit" name="action" value="submited" class="btn btn-primary btn-lg btn-block"> Quero receber oportunidades</button>
+                    </div>
+                </div> 
+            </form>
+        {% endif %}
     </div>
 
     <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/77babb72-ba3c-4a5c-9155-642c659bd8da-loader.js" ></script>
