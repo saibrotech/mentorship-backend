@@ -17,15 +17,18 @@ def index(request):
     Returns:
         HTML
     """
-    area = ''
+    chosen_area = ''
+    area = None
     areas = Category.objects.all()
 
     if PARAM_AREA in request.GET:
-        area = request.GET.get(PARAM_AREA)
+        chosen_area = request.GET.get(PARAM_AREA)
+        area = Category.objects.get(code=chosen_area)
 
     context = {
         'areas': areas,
-        'chosen_area': area,
+        'chosen_area': chosen_area,
+        'area': area,
     }
     return render(request, 'job/index.html', context)
 
@@ -44,6 +47,7 @@ def job_detail(request, pk):
     job = Job.objects.get(pk=pk)
     context = {
         'job': job,
+        'area': job.category,
     }
     return render(request, 'job/job_detail.html', context)
 
